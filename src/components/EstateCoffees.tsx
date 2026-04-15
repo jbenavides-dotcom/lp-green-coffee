@@ -3,9 +3,9 @@ import { useScrollFade } from './useScrollFade';
 import CoffeeCard from './CoffeeCard';
 
 const GRADIENTS: Record<string, string> = {
-  connect: 'linear-gradient(135deg, #E8B4D3, #B08BC9, #F4A9C1)',
-  pulse: 'linear-gradient(135deg, #E11D48, #C94B7A, #F7C7C7)',
-  beat: 'linear-gradient(135deg, #F4A9B5, #E11D48, #E8838C)',
+  connect: 'linear-gradient(135deg, #E11D48, #9B1B47)',
+  pulse: 'linear-gradient(135deg, #9B1B47, #E11D48)',
+  beat: 'linear-gradient(135deg, #E11D48, #CB9F5B)',
 };
 
 export default function EstateCoffees() {

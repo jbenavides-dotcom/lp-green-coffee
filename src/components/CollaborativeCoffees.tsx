@@ -3,7 +3,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 import { imgLeft } from '../lib/cloudinary';
 import { useScrollFade } from './useScrollFade';
 
-const LA_AMISTAD_GRADIENT = 'linear-gradient(135deg, #F5E6C8, #E8C98A, #F0D9A0)';
+const LA_AMISTAD_GRADIENT = 'linear-gradient(135deg, #CB9F5B, #9B7A3A)';
 
 export default function CollaborativeCoffees() {
   const { t } = useLanguage();

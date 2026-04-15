@@ -6,12 +6,12 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#F8F7F5]"
+      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white"
     >
-      {/* Watermark: "Green Coffee Series" in very light pink behind */}
+      {/* Watermark: "Green Coffee Series" in brand pink at 10% opacity */}
       <h1
         aria-hidden="true"
-        className="absolute inset-x-0 top-1/2 -translate-y-1/2 font-[Tenor_Sans] text-[#F4D5DF] text-center leading-[0.88] tracking-[-0.02em] px-4 pointer-events-none select-none"
+        className="absolute inset-x-0 top-1/2 -translate-y-1/2 font-[Tenor_Sans] text-[#E11D48]/10 text-center leading-[0.88] tracking-[-0.02em] px-4 pointer-events-none select-none"
         style={{ fontSize: 'clamp(3.5rem, 14vw, 13rem)' }}
       >
         {t.hero.watermark}
@@ -20,7 +20,7 @@ export default function Hero() {
       {/* Content on top */}
       <div className="relative z-10 text-center px-6">
         {/* Kicker */}
-        <p className="font-[Jost] text-[#9B1B47] uppercase tracking-[0.25em] text-xs md:text-sm mb-6">
+        <p className="font-[Jost] text-[#2D5A3D] uppercase tracking-[0.25em] text-xs md:text-sm mb-6">
           {t.hero.kicker}
         </p>
 
@@ -30,7 +30,7 @@ export default function Hero() {
           style={{ fontSize: 'clamp(2.5rem, 7vw, 5.5rem)' }}
         >
           {t.hero.titlePrefix}{' '}
-          <span className="font-script italic font-normal text-[#C75D8A]">
+          <span className="font-script italic font-normal text-[#CB9F5B]">
             {t.hero.titleScript}
           </span>{' '}
           {t.hero.titleSuffix}
@@ -38,7 +38,7 @@ export default function Hero() {
 
         {/* Subtitle */}
         <p
-          className="font-[Tenor_Sans] text-[#2C2D2E]/80 mt-10 max-w-2xl mx-auto leading-relaxed"
+          className="font-[Tenor_Sans] text-[#2C2D2E] mt-10 max-w-2xl mx-auto leading-relaxed"
           style={{ fontSize: 'clamp(1rem, 1.4vw, 1.25rem)' }}
         >
           {t.hero.subtitle}

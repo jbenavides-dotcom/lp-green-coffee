@@ -3,7 +3,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
 // Cloudinary URL hardcoded for craft-lab-banner with g_east crop
 
-const CRAFT_GRADIENT = 'linear-gradient(135deg, #C8E6D4, #A8D5BE, #F4D0D8, #F7C7C7)';
+const CRAFT_GRADIENT = 'linear-gradient(135deg, #2D5A3D, #1A3D28)';
 
 export default function CraftLab() {
   const { t } = useLanguage();
