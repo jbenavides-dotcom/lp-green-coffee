@@ -14,7 +14,7 @@ export default function Hero() {
         className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
       >
         <span
-          className="font-[Baskervville] text-[#ED728B]/8 text-[clamp(6rem,20vw,18rem)] leading-none whitespace-nowrap"
+          className="font-[Tenor_Sans] text-[#ED728B]/8 text-[clamp(6rem,20vw,18rem)] leading-none whitespace-nowrap"
         >
           Green Coffee
         </span>
@@ -39,7 +39,7 @@ export default function Hero() {
 
         {/* Hero headline with Great Vibes intercalated */}
         <h1
-          className="font-[Baskervville] text-[#2C2D2E] leading-tight mb-8"
+          className="font-[Tenor_Sans] text-[#2C2D2E] leading-tight mb-8"
           style={{ fontSize: 'clamp(2rem, 7vw, 5rem)' }}
         >
           <span className="block">

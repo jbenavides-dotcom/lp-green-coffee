@@ -30,6 +30,11 @@ body {
   font-family: 'Great Vibes', cursive;
 }
 
+/* Tenor Sans display utility */
+.font-display {
+  font-family: 'Tenor Sans', serif;
+}
+
 /* Remove default select styles */
 select {
   -webkit-appearance: none;

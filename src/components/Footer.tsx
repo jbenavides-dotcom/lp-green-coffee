@@ -41,7 +41,7 @@ export default function Footer() {
         />
 
         {/* Tagline */}
-        <p className="font-[Baskervville] text-[#FCF7EC]/55 text-lg italic max-w-xl mx-auto mb-10 leading-relaxed">
+        <p className="font-[Tenor_Sans] text-[#FCF7EC]/55 text-lg italic max-w-xl mx-auto mb-10 leading-relaxed">
           &ldquo;{t.footer.tagline}&rdquo;
         </p>
 

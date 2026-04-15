@@ -45,7 +45,7 @@ export default function CoffeeCard({
         </div>
 
         {/* Body text */}
-        <p className="font-[Baskervville] text-[#2C2D2E]/70 text-base italic leading-relaxed text-center mb-3">
+        <p className="font-[Tenor_Sans] text-[#2C2D2E]/70 text-base italic leading-relaxed text-center mb-3">
           {body}
         </p>
 

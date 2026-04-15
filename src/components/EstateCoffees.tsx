@@ -32,7 +32,7 @@ export default function EstateCoffees() {
           <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-3">
             {t.estateSection.sectionOurLines}
           </p>
-          <h2 className="font-[Baskervville] text-[#2C2D2E] text-3xl md:text-5xl">
+          <h2 className="font-[Tenor_Sans] text-[#2C2D2E] text-3xl md:text-5xl">
             {t.estateSection.heading}
           </h2>
           {/* Decorative underline */}

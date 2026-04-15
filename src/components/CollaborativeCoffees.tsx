@@ -24,7 +24,7 @@ export default function CollaborativeCoffees() {
           <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-3">
             Community
           </p>
-          <h2 className="font-[Baskervville] text-[#2C2D2E] text-3xl md:text-5xl">
+          <h2 className="font-[Tenor_Sans] text-[#2C2D2E] text-3xl md:text-5xl">
             {t.collaborativeSection.heading}
           </h2>
           <div className="flex items-center justify-center mt-5 gap-3">
@@ -44,7 +44,7 @@ export default function CollaborativeCoffees() {
                 alt="La Amistad"
                 loading="lazy"
                 decoding="async"
-                className="w-full aspect-[4/3] md:aspect-auto max-h-[280px] md:max-h-[520px] object-cover object-center hover:scale-105 transition-transform duration-700"
+                className="w-full h-auto aspect-[4/3] md:aspect-[5/6] md:max-h-none object-cover object-top md:object-center hover:scale-105 transition-transform duration-700"
               />
             </div>
 
@@ -62,7 +62,7 @@ export default function CollaborativeCoffees() {
                 <div className="w-10 h-px bg-[#ED728B]/40" />
               </div>
 
-              <p className="font-[Baskervville] text-[#2C2D2E]/70 text-base italic leading-relaxed mb-4">
+              <p className="font-[Tenor_Sans] text-[#2C2D2E]/70 text-base italic leading-relaxed mb-4">
                 {t.laAmistad.body}
               </p>
 

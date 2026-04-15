@@ -41,7 +41,7 @@ export default function Contact() {
           <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-3">
             Partnership
           </p>
-          <h2 className="font-[Baskervville] text-[#2C2D2E] text-3xl md:text-4xl leading-snug mb-4">
+          <h2 className="font-[Tenor_Sans] text-[#2C2D2E] text-3xl md:text-4xl leading-snug mb-4">
             {t.contact.heading}
           </h2>
           <div className="flex items-center justify-center gap-3">

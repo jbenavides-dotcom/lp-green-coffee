@@ -56,14 +56,14 @@ export default function CraftLab() {
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
               {/* Text overlay */}
               <p
-                className="absolute inset-0 flex items-center px-6 md:px-10 font-[Baskervville] text-white text-2xl md:text-4xl lg:text-5xl leading-tight max-w-[80%]"
+                className="absolute inset-0 flex items-center px-6 md:px-10 font-[Tenor_Sans] text-white text-2xl md:text-4xl lg:text-5xl leading-tight max-w-[80%]"
               >
                 {t.craftLab.imageQuote}
               </p>
             </div>
 
             {/* Body */}
-            <p className="font-[Baskervville] text-white text-lg italic leading-relaxed mb-4">
+            <p className="font-[Tenor_Sans] text-white text-lg italic leading-relaxed mb-4">
               {t.craftLab.body}
             </p>
 

@@ -27,7 +27,7 @@ export default function Intro() {
         </p>
 
         {/* Pull quote */}
-        <p className="font-[Baskervville] text-[#2C2D2E] text-xl md:text-2xl lg:text-3xl leading-relaxed italic mb-10">
+        <p className="font-[Tenor_Sans] text-[#2C2D2E] text-xl md:text-2xl lg:text-3xl leading-relaxed italic mb-10">
           &ldquo;{t.intro.body}&rdquo;
         </p>
 
@@ -49,7 +49,7 @@ export default function Intro() {
                   : ''
               }`}
             >
-              <p className="font-[Baskervville] text-[#ED728B] text-3xl md:text-4xl mb-2">
+              <p className="font-[Tenor_Sans] text-[#ED728B] text-3xl md:text-4xl mb-2">
                 {stat.value}
               </p>
               <p className="font-[Jost] text-[#2C2D2E]/50 text-xs tracking-wide uppercase">
