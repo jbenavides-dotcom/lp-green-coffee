@@ -27,6 +27,7 @@ export default function EstateCoffees() {
               imageName={coffee.imageName}
               name={coffee.name}
               body={coffee.body}
+              details={coffee.details}
               tags={coffee.tags}
               reversed={coffee.reversed}
             />

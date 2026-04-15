@@ -1,16 +1,21 @@
+import { useState } from 'react';
 import { useScrollFade } from './useScrollFade';
+import { useLanguage } from '../i18n/LanguageContext';
 import { img } from '../lib/cloudinary';
 
 interface CoffeeCardProps {
   imageName: string;
   name: string;
   body: string;
+  details: string;
   tags: readonly string[];
   reversed?: boolean;
 }
 
-export default function CoffeeCard({ imageName, name, body, tags, reversed = false }: CoffeeCardProps) {
+export default function CoffeeCard({ imageName, name, body, details, tags, reversed = false }: CoffeeCardProps) {
   const { ref, visible } = useScrollFade<HTMLDivElement>();
+  const { t } = useLanguage();
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <div
@@ -32,7 +37,26 @@ export default function CoffeeCard({ imageName, name, body, tags, reversed = fal
           Estate-Grown
         </p>
         <h3 className="font-[Baskervville] text-[#FCF7EC] text-4xl md:text-5xl mb-6">{name}</h3>
-        <p className="font-[Jost] text-[#FCF7EC]/70 text-base leading-relaxed mb-8">{body}</p>
+        <p className="font-[Jost] text-[#FCF7EC]/70 text-base leading-relaxed mb-4">{body}</p>
+
+        {/* Expandable details */}
+        <div
+          className={`overflow-hidden transition-all duration-500 ${expanded ? 'max-h-96 opacity-100 mb-4' : 'max-h-0 opacity-0 mb-0'}`}
+        >
+          <p className="font-[Jost] text-[#FCF7EC]/60 text-sm leading-relaxed">{details}</p>
+        </div>
+
+        {/* Learn More / Show Less button */}
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="flex items-center gap-1 text-[#CB9F5B] text-sm font-[Jost] font-medium tracking-wide mb-8 hover:text-[#e0b96e] transition-colors duration-200 w-fit"
+        >
+          {expanded ? t.readLess : t.readMore}
+          <span className={`transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}>
+            ↓
+          </span>
+        </button>
+
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
             <span

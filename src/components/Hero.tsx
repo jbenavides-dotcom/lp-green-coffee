@@ -1,5 +1,5 @@
 import { useLanguage } from '../i18n/LanguageContext';
-import { img } from '../lib/cloudinary';
+import { imgDark } from '../lib/cloudinary';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src={img('banner-main', 1920)}
+          src={imgDark('banner-main', 1920)}
           alt="La Palma y El Tucán coffee farm"
           className="w-full h-full object-cover"
         />

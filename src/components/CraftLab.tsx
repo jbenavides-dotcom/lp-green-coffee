@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
-import { img } from '../lib/cloudinary';
+import { imgDark } from '../lib/cloudinary';
 import { useScrollFade } from './useScrollFade';
 
 export default function CraftLab() {
   const { t } = useLanguage();
   const { ref, visible } = useScrollFade<HTMLElement>();
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <section
@@ -15,7 +17,7 @@ export default function CraftLab() {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
-          src={img('craft-lab-banner', 1920)}
+          src={imgDark('craft-lab-banner', 1920)}
           alt="Craft Lab"
           className="w-full h-full object-cover"
         />
@@ -30,9 +32,30 @@ export default function CraftLab() {
         <h2 className="font-[Baskervville] text-[#FCF7EC] text-4xl md:text-6xl mb-8">
           {t.craftLab.heading}
         </h2>
-        <p className="font-[Jost] text-[#FCF7EC]/75 text-lg leading-relaxed mb-10">
+        <p className="font-[Jost] text-[#FCF7EC]/75 text-lg leading-relaxed mb-4">
           {t.craftLab.body}
         </p>
+
+        {/* Expandable details */}
+        <div
+          className={`overflow-hidden transition-all duration-500 ${expanded ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0 mb-0'}`}
+        >
+          <p className="font-[Jost] text-[#FCF7EC]/60 text-base leading-relaxed">{t.craftLab.details}</p>
+        </div>
+
+        {/* Learn More / Show Less button */}
+        <div className="flex justify-center mb-8">
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="flex items-center gap-1 text-[#CB9F5B] text-sm font-[Jost] font-medium tracking-wide hover:text-[#e0b96e] transition-colors duration-200"
+          >
+            {expanded ? t.readLess : t.readMore}
+            <span className={`transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}>
+              ↓
+            </span>
+          </button>
+        </div>
+
         <div className="flex flex-wrap gap-3 justify-center">
           {t.craftLab.tags.map((tag) => (
             <span
