@@ -58,6 +58,7 @@ export const translations = {
     },
     craftLab: {
       heading: 'CRAFT LAB',
+      imageQuote: 'The future of coffee is co-created',
       body: 'Our laboratory of artisanal innovation. Experimental micro-lots available exclusively to our 50 premium partners. Where science meets craft in the pursuit of extraordinary cup profiles.',
       details: 'The Craft Lab is where boundaries dissolve between science and artistry. Here, we develop experimental micro-lots that challenge everything we know about coffee processing. Available exclusively to our 50 premium partners, these coffees represent the frontier of specialty coffee innovation — from novel fermentation cultures to unprecedented processing techniques that unlock flavors never before experienced in a cup.',
       tags: ['Experimental', 'Exclusive', 'Micro-lots'],
@@ -139,6 +140,7 @@ export const translations = {
     },
     craftLab: {
       heading: 'CRAFT LAB',
+      imageQuote: 'El futuro del café se co-crea',
       body: 'Nuestro laboratorio de innovación artesanal. Microlotes experimentales disponibles exclusivamente para nuestros 50 socios premium. Donde la ciencia se encuentra con la artesanía en la búsqueda de perfiles de taza extraordinarios.',
       details: 'El Craft Lab es donde los límites se disuelven entre la ciencia y la artesanía. Aquí desarrollamos microlotes experimentales que desafían todo lo que sabemos sobre el procesamiento del café. Disponibles exclusivamente para nuestros 50 socios premium, estos cafés representan la frontera de la innovación en café de especialidad — desde cultivos de fermentación novedosos hasta técnicas de procesamiento sin precedentes que desbloquean sabores nunca antes experimentados en una taza.',
       tags: ['Experimental', 'Exclusive', 'Micro-lots'],

@@ -43,16 +43,23 @@ export default function CraftLab() {
               <div className="w-12 h-px bg-white/50" />
             </div>
 
-            {/* Craft Lab image */}
-            <div className="mb-6 overflow-hidden rounded-2xl aspect-video">
+            {/* Craft Lab image with HTML overlay text */}
+            <div className="relative mb-6 overflow-hidden rounded-2xl aspect-video">
               <img
-                src={img('craft-lab-secondary', 1200)}
+                src={img('craft-lab-banner', 1600)}
                 alt="Craft Lab"
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover"
-                onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
               />
+              {/* Dark gradient overlay for legibility */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
+              {/* Text overlay */}
+              <p
+                className="absolute inset-0 flex items-center px-6 md:px-10 font-[Baskervville] text-white text-2xl md:text-4xl lg:text-5xl leading-tight max-w-[80%]"
+              >
+                {t.craftLab.imageQuote}
+              </p>
             </div>
 
             {/* Body */}
