@@ -6,90 +6,24 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex items-center justify-center text-center overflow-hidden bg-[#FFFFFF] py-24 md:py-32"
+      className="relative flex items-center justify-center text-center overflow-hidden min-h-[70vh] md:min-h-[85vh] px-6 py-20"
+      style={{ background: 'linear-gradient(135deg, #E891B8 0%, #D4749E 50%, #C75D8A 100%)' }}
     >
-      {/* Decorative large background text */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
-      >
-        <span
-          className="font-[Tenor_Sans] text-[#E11D48]/8 text-[clamp(6rem,20vw,18rem)] leading-none whitespace-nowrap"
-        >
-          Green Coffee
-        </span>
-      </div>
-
-      {/* Subtle radial glow */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(237,114,139,0.10) 0%, transparent 70%)',
-        }}
-      />
-
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-20 pb-12 md:pt-28 md:pb-20">
-        {/* Eyebrow */}
-        <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-8">
-          La Palma y El Tucán — Colombia
-        </p>
-
-        {/* Hero headline with Great Vibes intercalated */}
+      {/* Title */}
+      <div className="relative z-10 max-w-6xl mx-auto">
         <h1
-          className="font-[Tenor_Sans] text-[#2C2D2E] leading-tight mb-8"
-          style={{ fontSize: 'clamp(2rem, 7vw, 5rem)' }}
+          className="font-[Tenor_Sans] text-[#9B1B47] leading-[0.95] tracking-tight"
+          style={{ fontSize: 'clamp(3.5rem, 12vw, 11rem)' }}
         >
-          <span className="block">
-            {t.hero.heroLine1}{' '}
-            <em
-              className="font-script not-italic text-[#E11D48]"
-              style={{ fontSize: '1.15em', lineHeight: 1 }}
-            >
-              {t.hero.heroScript1}
-            </em>
-          </span>
-          <span className="block">
-            {t.hero.heroLine2}{' '}
-            <em
-              className="font-script not-italic text-[#E11D48]"
-              style={{ fontSize: '1.15em', lineHeight: 1 }}
-            >
-              {t.hero.heroScript2}
-            </em>
-          </span>
-          <span className="block">
-            {t.hero.heroLine3}
-          </span>
+          {t.hero.title}
         </h1>
 
-        {/* Divider line */}
-        <div className="flex items-center justify-center gap-4 mb-8">
-          <div className="w-12 h-px bg-[#E11D48]/40" />
-          <div className="w-2 h-2 rounded-full bg-[#E11D48]/40" />
-          <div className="w-12 h-px bg-[#E11D48]/40" />
-        </div>
-
         {/* Subtitle */}
-        <p className="font-[Jost] text-[#2C2D2E]/60 text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-10">
+        <p
+          className="font-[Tenor_Sans] text-white text-lg md:text-2xl lg:text-[clamp(1.25rem,2.5vw,2.25rem)] leading-relaxed text-center max-w-4xl mx-auto mt-8 md:mt-12"
+        >
           {t.hero.subtitle}
         </p>
-
-        {/* CTA — pill shape */}
-        <a
-          href="#intro"
-          className="inline-block px-10 py-4 bg-[#E11D48] text-white font-[Jost] font-medium text-sm tracking-widest uppercase rounded-full hover:bg-[#d96178] transition-all duration-200 shadow-md hover:shadow-lg"
-        >
-          {t.hero.cta}
-        </a>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-        <div className="w-px h-10 bg-[#E11D48]/30" />
-        <div className="w-1 h-1 rounded-full bg-[#E11D48]/40" />
       </div>
     </section>
   );

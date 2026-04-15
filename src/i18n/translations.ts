@@ -6,15 +6,8 @@ export const translations = {
       toggle: 'ES',
     },
     hero: {
-      title: "Green Coffee — For the World's Most Discerning Roasters",
-      subtitle:
-        "Estate-grown specialty lots from Colombia's cloud forest. Limited to 50 partners worldwide.",
-      cta: 'Explore Our Coffees',
-      heroLine1: 'Meet',
-      heroScript1: 'our',
-      heroLine2: 'new',
-      heroScript2: 'Green Coffee',
-      heroLine3: 'Series',
+      title: 'Green Coffee Series',
+      subtitle: 'Today, we stand for a more honest kind of specialty coffee. Welcome to this new era.',
     },
     intro: {
       body: "After years of learning, evolving, expanding, stumbling, and rebuilding, we've returned to the essence of what makes us who we are. Not what the market asks for. Not what trends dictate. But what we know, deep down, is worth doing.",
@@ -88,15 +81,8 @@ export const translations = {
       toggle: 'EN',
     },
     hero: {
-      title: 'Café Verde — Para los Tostadores Más Exigentes del Mundo',
-      subtitle:
-        'Lotes de especialidad cultivados en finca desde el bosque de niebla colombiano. Limitado a 50 socios mundialmente.',
-      cta: 'Explora Nuestros Cafés',
-      heroLine1: 'Conoce',
-      heroScript1: 'nuestro',
-      heroLine2: 'nuevo',
-      heroScript2: 'Café Verde',
-      heroLine3: 'Series',
+      title: 'Green Coffee Series',
+      subtitle: 'Hoy defendemos un café de especialidad más honesto. Bienvenidos a una nueva era.',
     },
     intro: {
       body: 'Después de años aprendiendo, evolucionando, expandiéndonos, tropezando y reconstruyéndonos, hemos vuelto a la esencia de lo que nos hace ser quienes somos. No lo que el mercado pide. No lo que dictan las tendencias. Sino lo que sabemos, en el fondo, vale la pena hacer.',
