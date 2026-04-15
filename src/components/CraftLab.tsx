@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
-// Cloudinary URL hardcoded for craft-lab-banner with g_east crop
-
-// Card uses brand cream background; the image banner provides visual contrast
 
 export default function CraftLab() {
   const { t } = useLanguage();
@@ -14,90 +11,80 @@ export default function CraftLab() {
     <section
       id="craft-lab"
       ref={ref}
-      className={`bg-white py-16 md:py-20 px-6 transition-all duration-1000 ${
+      className={`py-20 md:py-28 bg-[#FCF7EC] px-6 transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
-      <div className="max-w-3xl mx-auto">
-        {/* Card */}
-        <div
-          className="rounded-3xl shadow-lg card-hover bg-[#FCF7EC]"
-        >
-          <div className="px-8 py-10 md:px-16 md:py-14 text-center overflow-hidden rounded-3xl">
-            {/* Eyebrow */}
-            <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-4">
-              Exclusive
-            </p>
+      <div className="max-w-6xl mx-auto">
+        {/* Section header */}
+        <div className="text-center mb-12">
+          <p className="font-[Jost] uppercase tracking-[0.25em] text-xs text-[#9B1B47] mb-4">
+            Exclusive
+          </p>
+          <h2
+            className="font-script text-[#2C2D2E] leading-none"
+            style={{ fontSize: 'clamp(3rem, 6vw, 5rem)' }}
+          >
+            Craft Lab
+          </h2>
+          <div className="w-16 h-px bg-[#CB9F5B] mx-auto mt-6" />
+        </div>
 
-            {/* Script name */}
-            <h2
-              className="font-script text-[#2C2D2E] leading-none mb-4"
-              style={{ fontSize: 'clamp(3.5rem, 10vw, 6rem)' }}
+        {/* 2-column layout: image + text */}
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* Image — clean, no overlay, no text on top */}
+          <div className="overflow-hidden rounded-2xl shadow-lg">
+            <img
+              src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200,c_fill,g_east,ar_4:5/lp-green-coffee/craft-lab-banner"
+              alt="Craft Lab"
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Text — separate from image */}
+          <div className="space-y-6">
+            <h3
+              className="font-[Tenor_Sans] text-[#2C2D2E] text-3xl md:text-4xl lg:text-5xl leading-tight"
             >
-              Craft Lab
-            </h2>
+              {t.craftLab.imageQuote}
+            </h3>
 
-            {/* Thin separator */}
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-12 h-px bg-[#E11D48]/30" />
-            </div>
-
-            {/* Craft Lab image with HTML overlay text */}
-            <div className="relative mb-6 overflow-hidden rounded-2xl aspect-video">
-              <img
-                src={`https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1600,c_fill,g_east,ar_16:9,e_improve/lp-green-coffee/craft-lab-banner`}
-                alt="Craft Lab"
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover"
-              />
-              {/* Dark gradient overlay for legibility */}
-              <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/35 to-black/60" />
-              {/* Text overlay */}
-              <p
-                className="absolute inset-0 flex items-center justify-center text-center px-6 md:px-10 font-[Tenor_Sans] text-white text-2xl md:text-4xl lg:text-5xl leading-tight"
-              >
-                {t.craftLab.imageQuote}
-              </p>
-            </div>
-
-            {/* Body */}
-            <p className="font-[Tenor_Sans] text-[#2C2D2E]/70 text-lg italic leading-relaxed mb-4">
+            <p className="font-[Tenor_Sans] text-[#2C2D2E]/70 text-lg italic leading-relaxed">
               {t.craftLab.body}
             </p>
 
             {/* Expandable details */}
             <div
               className={`overflow-hidden transition-all duration-500 ${
-                expanded ? 'max-h-60 opacity-100 mb-6' : 'max-h-0 opacity-0 mb-0'
+                expanded ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'
               }`}
             >
-              <p className="font-[Jost] text-[#2C2D2E]/55 text-sm leading-relaxed mt-2">
+              <p className="font-[Jost] text-[#2C2D2E]/55 text-sm leading-relaxed">
                 {t.craftLab.details}
               </p>
             </div>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-3 justify-center mb-8">
+            <div className="flex flex-wrap gap-2 pt-2">
               {t.craftLab.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="border border-[#E11D48]/40 text-[#E11D48] text-xs px-4 py-1.5 rounded-full tracking-wider font-[Jost]"
+                  className="px-4 py-1.5 rounded-full bg-[#E11D48]/10 text-[#9B1B47] text-xs font-[Jost] uppercase tracking-wider"
                 >
                   {tag}
                 </span>
               ))}
             </div>
 
-            {/* CTA button */}
+            {/* Learn More button */}
             <button
               onClick={() => setExpanded(!expanded)}
               className="inline-flex items-center gap-1.5 px-8 py-3 border-2 border-[#E11D48] text-[#E11D48] font-[Jost] font-medium text-xs tracking-widest uppercase rounded-full hover:bg-[#E11D48] hover:text-white transition-all duration-200"
             >
               {expanded ? t.readLess : t.readMore}
-              <span
-                className={`transition-transform duration-300 text-sm ${expanded ? 'rotate-180' : ''}`}
-              >
+              <span className={`transition-transform duration-300 text-sm ${expanded ? 'rotate-180' : ''}`}>
                 ↓
               </span>
             </button>
@@ -105,7 +92,7 @@ export default function CraftLab() {
         </div>
 
         {/* Exclusivity note */}
-        <p className="text-center font-[Jost] text-[#2C2D2E]/40 text-xs tracking-widest uppercase mt-8">
+        <p className="text-center font-[Jost] text-[#2C2D2E]/40 text-xs tracking-widest uppercase mt-12">
           Limited to 50 partners worldwide
         </p>
       </div>
