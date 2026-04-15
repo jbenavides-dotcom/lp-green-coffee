@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useScrollFade } from './useScrollFade';
 import { useLanguage } from '../i18n/LanguageContext';
-import { img } from '../lib/cloudinary';
+import { imgCard } from '../lib/cloudinary';
 
 interface CoffeeCardProps {
   imageName: string;
@@ -25,7 +25,7 @@ export default function CoffeeCard({ imageName, name, body, details, tags, rever
       {/* Image */}
       <div className="md:w-2/5 aspect-square overflow-hidden bg-[#2C2D2E]">
         <img
-          src={img(imageName, 600)}
+          src={imgCard(imageName)}
           alt={name}
           className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
         />

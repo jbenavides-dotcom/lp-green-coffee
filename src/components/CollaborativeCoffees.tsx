@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
-import { img } from '../lib/cloudinary';
+import { imgCard } from '../lib/cloudinary';
 import { useScrollFade } from './useScrollFade';
 
 export default function CollaborativeCoffees() {
@@ -27,7 +27,7 @@ export default function CollaborativeCoffees() {
           {/* Image */}
           <div className="md:w-2/5 aspect-square overflow-hidden bg-[#2C2D2E]">
             <img
-              src={img('la-amistad', 600)}
+              src={imgCard('la-amistad')}
               alt="La Amistad"
               className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
             />
