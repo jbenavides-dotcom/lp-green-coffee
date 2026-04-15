@@ -29,7 +29,7 @@ export default function Header() {
           : 'bg-[#FFFFFF]/80 backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-5 md:py-6 flex items-center justify-between">
         {/* Nav links — left (desktop) */}
         <nav className="hidden md:flex items-center gap-7">
           {navLinks.slice(0, 2).map((link) => (
@@ -48,7 +48,7 @@ export default function Header() {
           <img
             src={img('logo', 200)}
             alt="La Palma y El Tucán"
-            className="h-10 w-auto object-contain"
+            className="h-14 md:h-16 w-auto object-contain"
           />
         </a>
 
