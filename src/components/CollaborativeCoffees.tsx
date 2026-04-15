@@ -25,11 +25,11 @@ export default function CollaborativeCoffees() {
         {/* La Amistad card */}
         <div className="flex flex-col md:flex-row gap-0 max-w-5xl mx-auto shadow-lg overflow-hidden">
           {/* Image */}
-          <div className="md:w-1/2 aspect-[4/3] overflow-hidden">
+          <div className="md:w-1/2 aspect-[4/3] overflow-hidden bg-[#2C2D2E]">
             <img
               src={img('la-amistad', 800)}
               alt="La Amistad"
-              className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover object-[center_20%] hover:scale-105 transition-transform duration-700"
             />
           </div>
           {/* Content */}

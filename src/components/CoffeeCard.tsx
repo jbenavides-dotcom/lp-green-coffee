@@ -23,11 +23,11 @@ export default function CoffeeCard({ imageName, name, body, details, tags, rever
       className={`flex flex-col ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} gap-0 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
       {/* Image */}
-      <div className="md:w-1/2 aspect-[4/3] overflow-hidden">
+      <div className="md:w-1/2 aspect-[4/3] overflow-hidden bg-[#2C2D2E]">
         <img
           src={img(imageName, 800)}
           alt={name}
-          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+          className="w-full h-full object-cover object-[center_20%] hover:scale-105 transition-transform duration-700"
         />
       </div>
 
