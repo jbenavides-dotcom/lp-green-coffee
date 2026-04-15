@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
-import { imgCard } from '../lib/cloudinary';
+import { img } from '../lib/cloudinary';
 import { useScrollFade } from './useScrollFade';
 
 const LA_AMISTAD_GRADIENT = 'linear-gradient(135deg, #F5E6C8, #E8C98A, #F0D9A0)';
@@ -14,13 +14,13 @@ export default function CollaborativeCoffees() {
     <section
       id="collaborative"
       ref={ref}
-      className={`bg-[#FCF7EC] py-24 md:py-32 px-6 transition-all duration-1000 ${
+      className={`bg-[#FCF7EC] py-16 md:py-20 px-6 transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-3">
             Community
           </p>
@@ -38,11 +38,13 @@ export default function CollaborativeCoffees() {
         <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-md overflow-hidden card-hover">
           <div className="flex flex-col md:flex-row">
             {/* Image */}
-            <div className="md:w-2/5 aspect-[4/3] md:aspect-auto overflow-hidden">
+            <div className="md:w-2/5 overflow-hidden">
               <img
-                src={imgCard('la-amistad')}
+                src={img('la-amistad', 1200)}
                 alt="La Amistad"
-                className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
+                className="w-full max-h-[250px] md:max-h-none object-cover object-center hover:scale-105 transition-transform duration-700"
               />
             </div>
 

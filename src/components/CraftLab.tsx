@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
+import { img } from '../lib/cloudinary';
 
 const CRAFT_GRADIENT = 'linear-gradient(135deg, #C8E6D4, #A8D5BE, #F4D0D8, #F7C7C7)';
 
@@ -13,7 +14,7 @@ export default function CraftLab() {
     <section
       id="craft-lab"
       ref={ref}
-      className={`bg-white py-24 md:py-32 px-6 transition-all duration-1000 ${
+      className={`bg-white py-16 md:py-20 px-6 transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
@@ -23,7 +24,7 @@ export default function CraftLab() {
           className="rounded-3xl overflow-hidden shadow-lg card-hover"
           style={{ background: CRAFT_GRADIENT }}
         >
-          <div className="px-10 py-14 md:px-16 md:py-20 text-center">
+          <div className="px-10 py-12 md:px-16 md:py-16 text-center">
             {/* Eyebrow */}
             <p className="text-white/80 text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-4">
               Exclusive
@@ -40,6 +41,18 @@ export default function CraftLab() {
             {/* Thin separator */}
             <div className="flex items-center justify-center mb-6">
               <div className="w-12 h-px bg-white/50" />
+            </div>
+
+            {/* Craft Lab image */}
+            <div className="mb-6 overflow-hidden rounded-2xl aspect-video">
+              <img
+                src={img('craft-lab-secondary', 1200)}
+                alt="Craft Lab"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+              />
             </div>
 
             {/* Body */}

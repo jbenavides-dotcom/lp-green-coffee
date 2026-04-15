@@ -30,11 +30,11 @@ export default function CoffeeCard({
       }`}
     >
       {/* Card body */}
-      <div className="flex flex-col flex-1 p-8 pb-6">
+      <div className="flex flex-col flex-1 p-5 pb-4 md:p-8 md:pb-6">
         {/* Name in Great Vibes */}
         <h3
           className="font-script text-[#2C2D2E] text-center mb-3 leading-none"
-          style={{ fontSize: 'clamp(3rem, 6vw, 4.5rem)' }}
+          style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}
         >
           {name.charAt(0) + name.slice(1).toLowerCase()}
         </h3>

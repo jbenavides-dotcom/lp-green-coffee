@@ -31,13 +31,13 @@ export default function Contact() {
     <section
       id="contact"
       ref={ref}
-      className={`bg-white py-24 md:py-32 px-6 transition-all duration-1000 ${
+      className={`bg-white py-16 md:py-20 px-6 transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
       <div className="max-w-2xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10">
           <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-3">
             Partnership
           </p>
@@ -111,7 +111,7 @@ export default function Contact() {
             <div className="pt-4 text-center">
               <button
                 type="submit"
-                className="inline-block px-12 py-4 bg-[#ED728B] text-white font-[Jost] font-medium text-sm tracking-widest uppercase rounded-full hover:bg-[#d96178] transition-all duration-200 shadow-md hover:shadow-lg"
+                className="inline-block px-8 py-4 bg-[#ED728B] text-white font-[Jost] font-medium text-sm tracking-widest uppercase rounded-full hover:bg-[#d96178] transition-all duration-200 shadow-md hover:shadow-lg"
               >
                 {t.contact.submit}
               </button>

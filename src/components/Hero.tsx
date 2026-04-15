@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-[#FDEEF0]"
+      className="relative flex items-center justify-center text-center overflow-hidden bg-[#FDEEF0] py-24 md:py-32"
     >
       {/* Decorative large background text */}
       <div
@@ -31,15 +31,18 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-28 pb-20">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-20 pb-12 md:pt-28 md:pb-20">
         {/* Eyebrow */}
         <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-8">
           La Palma y El Tucán — Colombia
         </p>
 
         {/* Hero headline with Great Vibes intercalated */}
-        <h1 className="font-[Baskervville] text-[#2C2D2E] leading-tight mb-8">
-          <span className="block text-4xl md:text-6xl lg:text-7xl">
+        <h1
+          className="font-[Baskervville] text-[#2C2D2E] leading-tight mb-8"
+          style={{ fontSize: 'clamp(2rem, 7vw, 5rem)' }}
+        >
+          <span className="block">
             {t.hero.heroLine1}{' '}
             <em
               className="font-script not-italic text-[#ED728B]"
@@ -48,7 +51,7 @@ export default function Hero() {
               {t.hero.heroScript1}
             </em>
           </span>
-          <span className="block text-4xl md:text-6xl lg:text-7xl">
+          <span className="block">
             {t.hero.heroLine2}{' '}
             <em
               className="font-script not-italic text-[#ED728B]"
@@ -57,7 +60,7 @@ export default function Hero() {
               {t.hero.heroScript2}
             </em>
           </span>
-          <span className="block text-4xl md:text-6xl lg:text-7xl">
+          <span className="block">
             {t.hero.heroLine3}
           </span>
         </h1>
@@ -70,7 +73,7 @@ export default function Hero() {
         </div>
 
         {/* Subtitle */}
-        <p className="font-[Jost] text-[#2C2D2E]/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
+        <p className="font-[Jost] text-[#2C2D2E]/60 text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-10">
           {t.hero.subtitle}
         </p>
 

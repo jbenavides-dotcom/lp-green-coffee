@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 export function useScrollFade<T extends HTMLElement>() {
   const ref = useRef<T>(null);
@@ -12,10 +12,10 @@ export function useScrollFade<T extends HTMLElement>() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.disconnect();
+          observer.unobserve(el); // Once visible, stay visible forever
         }
       },
-      { threshold: 0.12 }
+      { threshold: 0.1 } // Trigger early at 10% visibility
     );
 
     observer.observe(el);

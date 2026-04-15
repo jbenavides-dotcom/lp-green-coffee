@@ -22,13 +22,13 @@ export default function EstateCoffees() {
     <section
       id="estate"
       ref={ref}
-      className={`bg-[#FCF7EC] py-24 md:py-32 px-6 transition-all duration-1000 ${
+      className={`bg-[#FCF7EC] py-16 md:py-20 px-6 transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-3">
             {t.estateSection.sectionOurLines}
           </p>

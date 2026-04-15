@@ -16,7 +16,7 @@ export default function Intro() {
     <section
       id="intro"
       ref={ref}
-      className={`bg-white py-24 md:py-32 px-6 transition-all duration-1000 ${
+      className={`bg-white py-16 md:py-20 px-6 transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
@@ -27,7 +27,7 @@ export default function Intro() {
         </p>
 
         {/* Pull quote */}
-        <p className="font-[Baskervville] text-[#2C2D2E] text-xl md:text-2xl lg:text-3xl leading-relaxed italic mb-16">
+        <p className="font-[Baskervville] text-[#2C2D2E] text-xl md:text-2xl lg:text-3xl leading-relaxed italic mb-10">
           &ldquo;{t.intro.body}&rdquo;
         </p>
 
