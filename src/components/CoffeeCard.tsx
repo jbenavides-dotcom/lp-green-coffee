@@ -27,7 +27,7 @@ export default function CoffeeCard({ imageName, name, body, details, tags, rever
         <img
           src={img(imageName, 800)}
           alt={name}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+          className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
         />
       </div>
 

@@ -29,7 +29,7 @@ export default function CollaborativeCoffees() {
             <img
               src={img('la-amistad', 800)}
               alt="La Amistad"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
             />
           </div>
           {/* Content */}
