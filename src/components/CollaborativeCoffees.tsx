@@ -31,16 +31,16 @@ export default function CollaborativeCoffees() {
           </div>
         </div>
 
-        {/* Stacked layout: image on top full-width, text centered below */}
+        {/* Stacked layout: image on top, text centered below */}
         <div className="flex flex-col gap-12 items-center">
-          {/* Image — clean, no text overlay (image itself already has "La Amistad" script) */}
-          <div className="relative overflow-hidden rounded-2xl shadow-lg aspect-[16/9] w-full bg-[#F1ECDF]">
+          {/* Image — show natural aspect (near-square 1600x1581), no forced crop */}
+          <div className="w-full max-w-2xl mx-auto rounded-2xl shadow-lg overflow-hidden bg-[#F1ECDF]">
             <img
-              src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1800,c_fill,g_center,ar_16:9/lp-green-coffee/la-amistad"
-              alt="La Amistad"
+              src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1600/lp-green-coffee/la-amistad"
+              alt="La Amistad — collaborative coffees from neighboring farms"
               loading="lazy"
               decoding="async"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="block w-full h-auto"
             />
           </div>
 
