@@ -23,7 +23,7 @@ export default function CoffeeCard({ imageName, name, body, details, tags, rever
       className={`flex flex-col ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} gap-0 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
       {/* Image */}
-      <div className="md:w-2/5 aspect-square overflow-hidden bg-[#2C2D2E]">
+      <div className="md:w-1/3 aspect-[4/3] overflow-hidden bg-[#2C2D2E]">
         <img
           src={imgCard(imageName)}
           alt={name}
@@ -32,7 +32,7 @@ export default function CoffeeCard({ imageName, name, body, details, tags, rever
       </div>
 
       {/* Content */}
-      <div className="md:w-3/5 bg-[#2C2D2E] flex flex-col justify-center px-10 py-12 md:px-16">
+      <div className="md:w-2/3 bg-[#2C2D2E] flex flex-col justify-center px-10 py-12 md:px-16">
         <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-4">
           Estate-Grown
         </p>
