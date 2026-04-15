@@ -1,0 +1,49 @@
+import { useScrollFade } from './useScrollFade';
+import { img } from '../lib/cloudinary';
+
+interface CoffeeCardProps {
+  imageName: string;
+  name: string;
+  body: string;
+  tags: readonly string[];
+  reversed?: boolean;
+}
+
+export default function CoffeeCard({ imageName, name, body, tags, reversed = false }: CoffeeCardProps) {
+  const { ref, visible } = useScrollFade<HTMLDivElement>();
+
+  return (
+    <div
+      ref={ref}
+      className={`flex flex-col ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} gap-0 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+    >
+      {/* Image */}
+      <div className="md:w-1/2 aspect-[4/3] overflow-hidden">
+        <img
+          src={img(imageName, 800)}
+          alt={name}
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="md:w-1/2 bg-[#2C2D2E] flex flex-col justify-center px-10 py-12 md:px-16">
+        <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-4">
+          Estate-Grown
+        </p>
+        <h3 className="font-[Baskervville] text-[#FCF7EC] text-4xl md:text-5xl mb-6">{name}</h3>
+        <p className="font-[Jost] text-[#FCF7EC]/70 text-base leading-relaxed mb-8">{body}</p>
+        <div className="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              className="border border-[#CB9F5B]/40 text-[#CB9F5B] text-xs px-3 py-1 tracking-wide font-[Jost]"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
