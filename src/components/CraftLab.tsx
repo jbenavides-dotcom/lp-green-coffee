@@ -3,7 +3,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
 // Cloudinary URL hardcoded for craft-lab-banner with g_east crop
 
-const CRAFT_GRADIENT = 'linear-gradient(135deg, #2D5A3D, #1A3D28)';
+// Card uses brand cream background; the image banner provides visual contrast
 
 export default function CraftLab() {
   const { t } = useLanguage();
@@ -21,18 +21,17 @@ export default function CraftLab() {
       <div className="max-w-3xl mx-auto">
         {/* Card */}
         <div
-          className="rounded-3xl shadow-lg card-hover"
-          style={{ background: CRAFT_GRADIENT }}
+          className="rounded-3xl shadow-lg card-hover bg-[#FCF7EC]"
         >
           <div className="px-8 py-10 md:px-16 md:py-14 text-center overflow-hidden rounded-3xl">
             {/* Eyebrow */}
-            <p className="text-white/80 text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-4">
+            <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-4">
               Exclusive
             </p>
 
             {/* Script name */}
             <h2
-              className="font-script text-white leading-none mb-4"
+              className="font-script text-[#2C2D2E] leading-none mb-4"
               style={{ fontSize: 'clamp(3.5rem, 10vw, 6rem)' }}
             >
               Craft Lab
@@ -40,7 +39,7 @@ export default function CraftLab() {
 
             {/* Thin separator */}
             <div className="flex items-center justify-center mb-6">
-              <div className="w-12 h-px bg-white/50" />
+              <div className="w-12 h-px bg-[#E11D48]/30" />
             </div>
 
             {/* Craft Lab image with HTML overlay text */}
@@ -63,7 +62,7 @@ export default function CraftLab() {
             </div>
 
             {/* Body */}
-            <p className="font-[Tenor_Sans] text-white text-lg italic leading-relaxed mb-4">
+            <p className="font-[Tenor_Sans] text-[#2C2D2E]/70 text-lg italic leading-relaxed mb-4">
               {t.craftLab.body}
             </p>
 
@@ -73,7 +72,7 @@ export default function CraftLab() {
                 expanded ? 'max-h-60 opacity-100 mb-6' : 'max-h-0 opacity-0 mb-0'
               }`}
             >
-              <p className="font-[Jost] text-white/80 text-sm leading-relaxed mt-2">
+              <p className="font-[Jost] text-[#2C2D2E]/55 text-sm leading-relaxed mt-2">
                 {t.craftLab.details}
               </p>
             </div>
@@ -83,7 +82,7 @@ export default function CraftLab() {
               {t.craftLab.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="border border-white/60 text-white text-xs px-4 py-1.5 rounded-full tracking-wider font-[Jost]"
+                  className="border border-[#E11D48]/40 text-[#E11D48] text-xs px-4 py-1.5 rounded-full tracking-wider font-[Jost]"
                 >
                   {tag}
                 </span>
@@ -93,7 +92,7 @@ export default function CraftLab() {
             {/* CTA button */}
             <button
               onClick={() => setExpanded(!expanded)}
-              className="inline-flex items-center gap-1.5 px-8 py-3 border-2 border-white text-white font-[Jost] font-medium text-xs tracking-widest uppercase rounded-full hover:bg-white hover:text-[#2C2D2E] transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-8 py-3 border-2 border-[#E11D48] text-[#E11D48] font-[Jost] font-medium text-xs tracking-widest uppercase rounded-full hover:bg-[#E11D48] hover:text-white transition-all duration-200"
             >
               {expanded ? t.readLess : t.readMore}
               <span
