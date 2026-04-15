@@ -30,24 +30,22 @@ export default function CraftLab() {
           <div className="w-16 h-px bg-[#CB9F5B] mx-auto mt-6" />
         </div>
 
-        {/* 2-column layout: image + text */}
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        {/* Stacked layout: image on top, text below centered */}
+        <div className="flex flex-col gap-12 items-center">
           {/* Image — clean, no overlay, no text on top */}
-          <div className="overflow-hidden rounded-2xl shadow-lg">
+          <div className="relative overflow-hidden rounded-2xl shadow-lg aspect-[16/9] w-full bg-[#F1ECDF]">
             <img
-              src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1200,c_fill,g_east,ar_4:5/lp-green-coffee/craft-lab-banner"
+              src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1800,c_fill,g_center,ar_16:9/lp-green-coffee/craft-lab-banner"
               alt="Craft Lab"
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
 
-          {/* Text — separate from image */}
-          <div className="space-y-6">
-            <h3
-              className="font-[Tenor_Sans] text-[#2C2D2E] text-3xl md:text-4xl lg:text-5xl leading-tight"
-            >
+          {/* Text — centered below image */}
+          <div className="space-y-6 max-w-3xl text-center">
+            <h3 className="font-[Tenor_Sans] text-[#2C2D2E] text-3xl md:text-4xl lg:text-5xl leading-tight">
               {t.craftLab.imageQuote}
             </h3>
 
@@ -67,7 +65,7 @@ export default function CraftLab() {
             </div>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 pt-2">
+            <div className="flex flex-wrap gap-2 pt-2 justify-center">
               {t.craftLab.tags.map((tag) => (
                 <span
                   key={tag}
