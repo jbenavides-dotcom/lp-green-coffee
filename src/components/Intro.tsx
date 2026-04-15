@@ -7,8 +7,8 @@ export default function Intro() {
 
   const stats = [
     { value: '2012', label: t.intro.stats.founded },
-    { value: '1,700m', label: t.intro.stats.altitude },
-    { value: '200+', label: t.intro.stats.families },
+    { value: '1,800m', label: t.intro.stats.altitude },
+    { value: '100', label: t.intro.stats.families },
     { value: '8', label: t.intro.stats.varieties },
   ];
 
@@ -33,9 +33,9 @@ export default function Intro() {
 
         {/* Divider with pink line */}
         <div className="flex items-center justify-center gap-3 mb-12">
-          <div className="flex-1 h-px bg-[#ED728B]/20" />
-          <div className="w-1.5 h-1.5 rounded-full bg-[#ED728B]/40" />
-          <div className="flex-1 h-px bg-[#ED728B]/20" />
+          <div className="flex-1 h-px bg-[#E11D48]/20" />
+          <div className="w-1.5 h-1.5 rounded-full bg-[#E11D48]/40" />
+          <div className="flex-1 h-px bg-[#E11D48]/20" />
         </div>
 
         {/* Stats row */}
@@ -49,7 +49,7 @@ export default function Intro() {
                   : ''
               }`}
             >
-              <p className="font-[Tenor_Sans] text-[#ED728B] text-3xl md:text-4xl mb-2">
+              <p className="font-[Tenor_Sans] text-[#E11D48] text-3xl md:text-4xl mb-2">
                 {stat.value}
               </p>
               <p className="font-[Jost] text-[#2C2D2E]/50 text-xs tracking-wide uppercase">

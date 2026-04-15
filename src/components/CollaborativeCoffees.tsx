@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
-import { img } from '../lib/cloudinary';
+import { imgLeft } from '../lib/cloudinary';
 import { useScrollFade } from './useScrollFade';
 
 const LA_AMISTAD_GRADIENT = 'linear-gradient(135deg, #F5E6C8, #E8C98A, #F0D9A0)';
@@ -14,7 +14,7 @@ export default function CollaborativeCoffees() {
     <section
       id="collaborative"
       ref={ref}
-      className={`bg-[#FCF7EC] py-16 md:py-20 px-6 transition-all duration-1000 ${
+      className={`bg-[#FFFFFF] py-16 md:py-20 px-6 transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
@@ -28,9 +28,9 @@ export default function CollaborativeCoffees() {
             {t.collaborativeSection.heading}
           </h2>
           <div className="flex items-center justify-center mt-5 gap-3">
-            <div className="w-16 h-px bg-[#ED728B]/30" />
-            <div className="w-2 h-2 rounded-full bg-[#ED728B]/40" />
-            <div className="w-16 h-px bg-[#ED728B]/30" />
+            <div className="w-16 h-px bg-[#E11D48]/30" />
+            <div className="w-2 h-2 rounded-full bg-[#E11D48]/40" />
+            <div className="w-16 h-px bg-[#E11D48]/30" />
           </div>
         </div>
 
@@ -40,11 +40,11 @@ export default function CollaborativeCoffees() {
             {/* Image */}
             <div className="md:w-2/5 overflow-hidden">
               <img
-                src={img('la-amistad', 1200)}
+                src={imgLeft('la-amistad')}
                 alt="La Amistad"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-auto aspect-[4/3] md:aspect-[5/6] md:max-h-none object-cover object-top md:object-center hover:scale-105 transition-transform duration-700"
+                className="w-full h-full aspect-[4/5] md:aspect-auto md:max-h-[520px] object-cover object-left md:object-center hover:scale-105 transition-transform duration-700"
               />
             </div>
 
@@ -59,7 +59,7 @@ export default function CollaborativeCoffees() {
               </h3>
 
               <div className="flex items-center mb-5">
-                <div className="w-10 h-px bg-[#ED728B]/40" />
+                <div className="w-10 h-px bg-[#E11D48]/40" />
               </div>
 
               <p className="font-[Tenor_Sans] text-[#2C2D2E]/70 text-base italic leading-relaxed mb-4">
@@ -82,7 +82,7 @@ export default function CollaborativeCoffees() {
                 {t.laAmistad.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="border border-[#ED728B]/40 text-[#ED728B] text-xs px-3 py-1 rounded-full tracking-wide font-[Jost]"
+                    className="border border-[#E11D48]/40 text-[#E11D48] text-xs px-3 py-1 rounded-full tracking-wide font-[Jost]"
                   >
                     {tag}
                   </span>

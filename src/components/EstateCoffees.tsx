@@ -4,8 +4,8 @@ import CoffeeCard from './CoffeeCard';
 
 const GRADIENTS: Record<string, string> = {
   connect: 'linear-gradient(135deg, #E8B4D3, #B08BC9, #F4A9C1)',
-  pulse: 'linear-gradient(135deg, #ED728B, #C94B7A, #F7C7C7)',
-  beat: 'linear-gradient(135deg, #F4A9B5, #ED728B, #E8838C)',
+  pulse: 'linear-gradient(135deg, #E11D48, #C94B7A, #F7C7C7)',
+  beat: 'linear-gradient(135deg, #F4A9B5, #E11D48, #E8838C)',
 };
 
 export default function EstateCoffees() {
@@ -22,7 +22,7 @@ export default function EstateCoffees() {
     <section
       id="estate"
       ref={ref}
-      className={`bg-[#FCF7EC] py-16 md:py-20 px-6 transition-all duration-1000 ${
+      className={`bg-[#FFFFFF] py-16 md:py-20 px-6 transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
@@ -37,9 +37,9 @@ export default function EstateCoffees() {
           </h2>
           {/* Decorative underline */}
           <div className="flex items-center justify-center mt-5 gap-3">
-            <div className="w-16 h-px bg-[#ED728B]/30" />
-            <div className="w-2 h-2 rounded-full bg-[#ED728B]/40" />
-            <div className="w-16 h-px bg-[#ED728B]/30" />
+            <div className="w-16 h-px bg-[#E11D48]/30" />
+            <div className="w-2 h-2 rounded-full bg-[#E11D48]/40" />
+            <div className="w-16 h-px bg-[#E11D48]/30" />
           </div>
         </div>
 

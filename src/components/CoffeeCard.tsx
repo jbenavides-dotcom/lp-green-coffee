@@ -41,7 +41,7 @@ export default function CoffeeCard({
 
         {/* Thin pink separator */}
         <div className="flex items-center justify-center mb-5">
-          <div className="w-10 h-px bg-[#ED728B]/40" />
+          <div className="w-10 h-px bg-[#E11D48]/40" />
         </div>
 
         {/* Body text */}
@@ -65,7 +65,7 @@ export default function CoffeeCard({
           {tags.map((tag) => (
             <span
               key={tag}
-              className="border border-[#ED728B]/40 text-[#ED728B] text-xs px-3 py-1 rounded-full tracking-wide font-[Jost]"
+              className="border border-[#E11D48]/40 text-[#E11D48] text-xs px-3 py-1 rounded-full tracking-wide font-[Jost]"
             >
               {tag}
             </span>

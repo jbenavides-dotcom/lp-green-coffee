@@ -22,7 +22,7 @@ export default function Contact() {
   };
 
   const inputClass =
-    'w-full border border-[#E5E0D0] bg-white rounded py-3 px-4 font-[Jost] text-[#2C2D2E] text-sm focus:outline-none focus:border-[#ED728B] transition-colors placeholder:text-[#2C2D2E]/30';
+    'w-full border border-[#E5E0D0] bg-white rounded py-3 px-4 font-[Jost] text-[#2C2D2E] text-sm focus:outline-none focus:border-[#E11D48] transition-colors placeholder:text-[#2C2D2E]/30';
 
   const labelClass =
     'block font-[Jost] text-xs tracking-widest uppercase text-[#2C2D2E]/50 mb-1.5';
@@ -45,16 +45,16 @@ export default function Contact() {
             {t.contact.heading}
           </h2>
           <div className="flex items-center justify-center gap-3">
-            <div className="w-12 h-px bg-[#ED728B]/30" />
-            <div className="w-1.5 h-1.5 rounded-full bg-[#ED728B]/40" />
-            <div className="w-12 h-px bg-[#ED728B]/30" />
+            <div className="w-12 h-px bg-[#E11D48]/30" />
+            <div className="w-1.5 h-1.5 rounded-full bg-[#E11D48]/40" />
+            <div className="w-12 h-px bg-[#E11D48]/30" />
           </div>
         </div>
 
         {submitted ? (
-          <div className="text-center py-16 bg-[#FDEEF0] rounded-3xl">
+          <div className="text-center py-16 bg-[#FFFFFF] rounded-3xl">
             <p
-              className="font-script text-[#ED728B] mb-3"
+              className="font-script text-[#E11D48] mb-3"
               style={{ fontSize: '3rem' }}
             >
               Thank you
@@ -111,7 +111,7 @@ export default function Contact() {
             <div className="pt-4 text-center">
               <button
                 type="submit"
-                className="inline-block px-8 py-4 bg-[#ED728B] text-white font-[Jost] font-medium text-sm tracking-widest uppercase rounded-full hover:bg-[#d96178] transition-all duration-200 shadow-md hover:shadow-lg"
+                className="inline-block px-8 py-4 bg-[#E11D48] text-white font-[Jost] font-medium text-sm tracking-widest uppercase rounded-full hover:bg-[#d96178] transition-all duration-200 shadow-md hover:shadow-lg"
               >
                 {t.contact.submit}
               </button>

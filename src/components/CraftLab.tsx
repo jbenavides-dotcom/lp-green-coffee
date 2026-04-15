@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
-import { img } from '../lib/cloudinary';
+// Cloudinary URL hardcoded for craft-lab-banner with g_east crop
 
 const CRAFT_GRADIENT = 'linear-gradient(135deg, #C8E6D4, #A8D5BE, #F4D0D8, #F7C7C7)';
 
@@ -46,7 +46,7 @@ export default function CraftLab() {
             {/* Craft Lab image with HTML overlay text */}
             <div className="relative mb-6 overflow-hidden rounded-2xl aspect-video">
               <img
-                src={img('craft-lab-banner', 1600)}
+                src={`https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1600,c_fill,g_east,ar_16:9,e_improve/lp-green-coffee/craft-lab-banner`}
                 alt="Craft Lab"
                 loading="lazy"
                 decoding="async"

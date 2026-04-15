@@ -52,7 +52,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="text-[#FCF7EC]/35 hover:text-[#ED728B] transition-colors duration-200"
+            className="text-[#FCF7EC]/35 hover:text-[#E11D48] transition-colors duration-200"
           >
             <IconInstagram />
           </a>
@@ -61,7 +61,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            className="text-[#FCF7EC]/35 hover:text-[#ED728B] transition-colors duration-200"
+            className="text-[#FCF7EC]/35 hover:text-[#E11D48] transition-colors duration-200"
           >
             <IconFacebook />
           </a>
@@ -70,7 +70,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="TikTok"
-            className="text-[#FCF7EC]/35 hover:text-[#ED728B] transition-colors duration-200"
+            className="text-[#FCF7EC]/35 hover:text-[#E11D48] transition-colors duration-200"
           >
             <IconTikTok />
           </a>

@@ -20,8 +20,8 @@ export const translations = {
       body: "After years of learning, evolving, expanding, stumbling, and rebuilding, we've returned to the essence of what makes us who we are. Not what the market asks for. Not what trends dictate. But what we know, deep down, is worth doing.",
       stats: {
         founded: 'Founded',
-        altitude: '1,700m altitude',
-        families: '200+ farming families',
+        altitude: '1,800m altitude',
+        families: '100 farming families',
         varieties: '8 rare varieties',
       },
     },
@@ -44,7 +44,7 @@ export const translations = {
     beat: {
       name: 'BEAT',
       body: 'Coffees crafted for competition. Rare lots. Exceptional precision. Limited releases.',
-      details: 'Competition-grade coffees that represent the absolute pinnacle of our craft. Beat is reserved for rare varieties and nanolots processed with exceptional precision. These are the coffees that have earned international recognition — limited releases that showcase the intersection of extraordinary genetics, innovative fermentation protocols, and the unique microclimate of our cloud forest at 1,700 meters.',
+      details: 'Competition-grade coffees that represent the absolute pinnacle of our craft. Beat is reserved for rare varieties and nanolots processed with exceptional precision. These are the coffees that have earned international recognition — limited releases that showcase the intersection of extraordinary genetics, innovative fermentation protocols, and the unique microclimate of our cloud forest at 1,800 meters.',
       tags: ['Estate-Grown', 'Competition Grade', 'Nanolots'],
     },
     collaborativeSection: {
@@ -102,8 +102,8 @@ export const translations = {
       body: 'Después de años aprendiendo, evolucionando, expandiéndonos, tropezando y reconstruyéndonos, hemos vuelto a la esencia de lo que nos hace ser quienes somos. No lo que el mercado pide. No lo que dictan las tendencias. Sino lo que sabemos, en el fondo, vale la pena hacer.',
       stats: {
         founded: 'Fundados',
-        altitude: '1,700m de altitud',
-        families: '200+ familias caficultoras',
+        altitude: '1,800m de altitud',
+        families: '100 familias caficultoras',
         varieties: '8 variedades raras',
       },
     },
@@ -126,7 +126,7 @@ export const translations = {
     beat: {
       name: 'BEAT',
       body: 'Cafés diseñados para competición. Lotes raros. Precisión excepcional. Lanzamientos limitados.',
-      details: 'Cafés de grado competición que representan la cúspide absoluta de nuestro oficio. Beat está reservado para variedades raras y nanolotes procesados con precisión excepcional. Estos son los cafés que han ganado reconocimiento internacional — lanzamientos limitados que muestran la intersección de genética extraordinaria, protocolos innovadores de fermentación y el microclima único de nuestro bosque de niebla a 1,700 metros.',
+      details: 'Cafés de grado competición que representan la cúspide absoluta de nuestro oficio. Beat está reservado para variedades raras y nanolotes procesados con precisión excepcional. Estos son los cafés que han ganado reconocimiento internacional — lanzamientos limitados que muestran la intersección de genética extraordinaria, protocolos innovadores de fermentación y el microclima único de nuestro bosque de niebla a 1,800 metros.',
       tags: ['Estate-Grown', 'Competition Grade', 'Nanolots'],
     },
     collaborativeSection: {

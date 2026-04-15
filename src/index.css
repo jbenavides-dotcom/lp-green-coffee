@@ -3,10 +3,10 @@
 :root {
   --color-dark: #2C2D2E;
   --color-gold: #CB9F5B;
-  --color-light: #FCF7EC;
-  --color-pink: #ED728B;
-  --color-cream: #FCF7EC;
-  --color-hero-bg: #FDEEF0;
+  --color-light: #FFFFFF;
+  --color-pink: #E11D48;
+  --color-cream: #F8F7F5;
+  --color-hero-bg: #FFFFFF;
 }
 
 html {
@@ -15,7 +15,7 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--color-cream);
+  background-color: #FFFFFF;
   color: var(--color-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

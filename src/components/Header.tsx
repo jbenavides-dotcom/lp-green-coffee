@@ -26,7 +26,7 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-[#E5E0D0]'
-          : 'bg-[#FCF7EC]/80 backdrop-blur-sm'
+          : 'bg-[#FFFFFF]/80 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
@@ -36,7 +36,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="font-[Jost] text-[#2C2D2E]/70 text-sm tracking-wide hover:text-[#ED728B] transition-colors duration-200"
+              className="font-[Jost] text-[#2C2D2E]/70 text-sm tracking-wide hover:text-[#E11D48] transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -58,7 +58,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="font-[Jost] text-[#2C2D2E]/70 text-sm tracking-wide hover:text-[#ED728B] transition-colors duration-200"
+              className="font-[Jost] text-[#2C2D2E]/70 text-sm tracking-wide hover:text-[#E11D48] transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -66,7 +66,7 @@ export default function Header() {
           <button
             onClick={toggleLang}
             aria-label={`Switch to ${lang === 'en' ? 'Spanish' : 'English'}`}
-            className="px-3 py-1 border border-[#ED728B] text-[#ED728B] text-xs tracking-widest font-[Jost] font-medium rounded-full hover:bg-[#ED728B] hover:text-white transition-all duration-200"
+            className="px-3 py-1 border border-[#E11D48] text-[#E11D48] text-xs tracking-widest font-[Jost] font-medium rounded-full hover:bg-[#E11D48] hover:text-white transition-all duration-200"
           >
             {t.nav.toggle}
           </button>
@@ -76,7 +76,7 @@ export default function Header() {
         <div className="flex md:hidden items-center gap-3">
           <button
             onClick={toggleLang}
-            className="px-3 py-1 border border-[#ED728B] text-[#ED728B] text-xs tracking-widest font-[Jost] font-medium rounded-full hover:bg-[#ED728B] hover:text-white transition-all duration-200"
+            className="px-3 py-1 border border-[#E11D48] text-[#E11D48] text-xs tracking-widest font-[Jost] font-medium rounded-full hover:bg-[#E11D48] hover:text-white transition-all duration-200"
           >
             {t.nav.toggle}
           </button>
@@ -104,7 +104,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="font-[Jost] text-[#2C2D2E]/70 text-sm tracking-wide hover:text-[#ED728B] transition-colors duration-200"
+              className="font-[Jost] text-[#2C2D2E]/70 text-sm tracking-wide hover:text-[#E11D48] transition-colors duration-200"
             >
               {link.label}
             </a>

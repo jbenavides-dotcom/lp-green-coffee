@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex items-center justify-center text-center overflow-hidden bg-[#FDEEF0] py-24 md:py-32"
+      className="relative flex items-center justify-center text-center overflow-hidden bg-[#FFFFFF] py-24 md:py-32"
     >
       {/* Decorative large background text */}
       <div
@@ -14,7 +14,7 @@ export default function Hero() {
         className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
       >
         <span
-          className="font-[Tenor_Sans] text-[#ED728B]/8 text-[clamp(6rem,20vw,18rem)] leading-none whitespace-nowrap"
+          className="font-[Tenor_Sans] text-[#E11D48]/8 text-[clamp(6rem,20vw,18rem)] leading-none whitespace-nowrap"
         >
           Green Coffee
         </span>
@@ -45,7 +45,7 @@ export default function Hero() {
           <span className="block">
             {t.hero.heroLine1}{' '}
             <em
-              className="font-script not-italic text-[#ED728B]"
+              className="font-script not-italic text-[#E11D48]"
               style={{ fontSize: '1.15em', lineHeight: 1 }}
             >
               {t.hero.heroScript1}
@@ -54,7 +54,7 @@ export default function Hero() {
           <span className="block">
             {t.hero.heroLine2}{' '}
             <em
-              className="font-script not-italic text-[#ED728B]"
+              className="font-script not-italic text-[#E11D48]"
               style={{ fontSize: '1.15em', lineHeight: 1 }}
             >
               {t.hero.heroScript2}
@@ -67,9 +67,9 @@ export default function Hero() {
 
         {/* Divider line */}
         <div className="flex items-center justify-center gap-4 mb-8">
-          <div className="w-12 h-px bg-[#ED728B]/40" />
-          <div className="w-2 h-2 rounded-full bg-[#ED728B]/40" />
-          <div className="w-12 h-px bg-[#ED728B]/40" />
+          <div className="w-12 h-px bg-[#E11D48]/40" />
+          <div className="w-2 h-2 rounded-full bg-[#E11D48]/40" />
+          <div className="w-12 h-px bg-[#E11D48]/40" />
         </div>
 
         {/* Subtitle */}
@@ -80,7 +80,7 @@ export default function Hero() {
         {/* CTA — pill shape */}
         <a
           href="#intro"
-          className="inline-block px-10 py-4 bg-[#ED728B] text-white font-[Jost] font-medium text-sm tracking-widest uppercase rounded-full hover:bg-[#d96178] transition-all duration-200 shadow-md hover:shadow-lg"
+          className="inline-block px-10 py-4 bg-[#E11D48] text-white font-[Jost] font-medium text-sm tracking-widest uppercase rounded-full hover:bg-[#d96178] transition-all duration-200 shadow-md hover:shadow-lg"
         >
           {t.hero.cta}
         </a>
@@ -88,8 +88,8 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-        <div className="w-px h-10 bg-[#ED728B]/30" />
-        <div className="w-1 h-1 rounded-full bg-[#ED728B]/40" />
+        <div className="w-px h-10 bg-[#E11D48]/30" />
+        <div className="w-1 h-1 rounded-full bg-[#E11D48]/40" />
       </div>
     </section>
   );
