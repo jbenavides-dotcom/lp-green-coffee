@@ -10,6 +10,11 @@ export const translations = {
       subtitle:
         "Estate-grown specialty lots from Colombia's cloud forest. Limited to 50 partners worldwide.",
       cta: 'Explore Our Coffees',
+      heroLine1: 'Meet',
+      heroScript1: 'our',
+      heroLine2: 'new',
+      heroScript2: 'Green Coffee',
+      heroLine3: 'Series',
     },
     intro: {
       body: "After years of learning, evolving, expanding, stumbling, and rebuilding, we've returned to the essence of what makes us who we are. Not what the market asks for. Not what trends dictate. But what we know, deep down, is worth doing.",
@@ -22,6 +27,7 @@ export const translations = {
     },
     estateSection: {
       heading: 'Estate-Grown Coffees',
+      sectionOurLines: 'Our Lines',
     },
     connect: {
       name: 'CONNECT',
@@ -85,6 +91,11 @@ export const translations = {
       subtitle:
         'Lotes de especialidad cultivados en finca desde el bosque de niebla colombiano. Limitado a 50 socios mundialmente.',
       cta: 'Explora Nuestros Cafés',
+      heroLine1: 'Conoce',
+      heroScript1: 'nuestro',
+      heroLine2: 'nuevo',
+      heroScript2: 'Café Verde',
+      heroLine3: 'Series',
     },
     intro: {
       body: 'Después de años aprendiendo, evolucionando, expandiéndonos, tropezando y reconstruyéndonos, hemos vuelto a la esencia de lo que nos hace ser quienes somos. No lo que el mercado pide. No lo que dictan las tendencias. Sino lo que sabemos, en el fondo, vale la pena hacer.',
@@ -97,6 +108,7 @@ export const translations = {
     },
     estateSection: {
       heading: 'Estate-Grown Coffees',
+      sectionOurLines: 'Our Lines',
     },
     connect: {
       name: 'CONNECT',

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useScrollFade } from './useScrollFade';
 import { useLanguage } from '../i18n/LanguageContext';
-import { imgCard } from '../lib/cloudinary';
 
 interface CoffeeCardProps {
   imageName: string;
@@ -9,10 +8,16 @@ interface CoffeeCardProps {
   body: string;
   details: string;
   tags: readonly string[];
-  reversed?: boolean;
+  gradient: string;
 }
 
-export default function CoffeeCard({ imageName, name, body, details, tags, reversed = false }: CoffeeCardProps) {
+export default function CoffeeCard({
+  name,
+  body,
+  details,
+  tags,
+  gradient,
+}: CoffeeCardProps) {
   const { ref, visible } = useScrollFade<HTMLDivElement>();
   const { t } = useLanguage();
   const [expanded, setExpanded] = useState(false);
@@ -20,53 +25,70 @@ export default function CoffeeCard({ imageName, name, body, details, tags, rever
   return (
     <div
       ref={ref}
-      className={`flex flex-col ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} gap-0 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      className={`bg-white rounded-3xl shadow-md overflow-hidden flex flex-col card-hover transition-all duration-1000 ${
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
     >
-      {/* Image */}
-      <div className="md:w-1/3 aspect-[4/3] overflow-hidden bg-[#2C2D2E]">
-        <img
-          src={imgCard(imageName)}
-          alt={name}
-          className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
-        />
-      </div>
+      {/* Card body */}
+      <div className="flex flex-col flex-1 p-8 pb-6">
+        {/* Name in Great Vibes */}
+        <h3
+          className="font-script text-[#2C2D2E] text-center mb-3 leading-none"
+          style={{ fontSize: 'clamp(3rem, 6vw, 4.5rem)' }}
+        >
+          {name.charAt(0) + name.slice(1).toLowerCase()}
+        </h3>
 
-      {/* Content */}
-      <div className="md:w-2/3 bg-[#2C2D2E] flex flex-col justify-center px-10 py-12 md:px-16">
-        <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-4">
-          Estate-Grown
+        {/* Thin pink separator */}
+        <div className="flex items-center justify-center mb-5">
+          <div className="w-10 h-px bg-[#ED728B]/40" />
+        </div>
+
+        {/* Body text */}
+        <p className="font-[Baskervville] text-[#2C2D2E]/70 text-base italic leading-relaxed text-center mb-3">
+          {body}
         </p>
-        <h3 className="font-[Baskervville] text-[#FCF7EC] text-4xl md:text-5xl mb-6">{name}</h3>
-        <p className="font-[Jost] text-[#FCF7EC]/70 text-base leading-relaxed mb-4">{body}</p>
 
         {/* Expandable details */}
         <div
-          className={`overflow-hidden transition-all duration-500 ${expanded ? 'max-h-96 opacity-100 mb-4' : 'max-h-0 opacity-0 mb-0'}`}
+          className={`overflow-hidden transition-all duration-500 ${
+            expanded ? 'max-h-60 opacity-100 mb-4' : 'max-h-0 opacity-0 mb-0'
+          }`}
         >
-          <p className="font-[Jost] text-[#FCF7EC]/60 text-sm leading-relaxed">{details}</p>
+          <p className="font-[Jost] text-[#2C2D2E]/55 text-sm leading-relaxed text-center mt-2">
+            {details}
+          </p>
         </div>
 
-        {/* Learn More / Show Less button */}
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="flex items-center gap-1 text-[#CB9F5B] text-sm font-[Jost] font-medium tracking-wide mb-8 hover:text-[#e0b96e] transition-colors duration-200 w-fit"
-        >
-          {expanded ? t.readLess : t.readMore}
-          <span className={`transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}>
-            ↓
-          </span>
-        </button>
-
-        <div className="flex flex-wrap gap-2">
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 justify-center mb-5 mt-auto">
           {tags.map((tag) => (
             <span
               key={tag}
-              className="border border-[#CB9F5B]/40 text-[#CB9F5B] text-xs px-3 py-1 tracking-wide font-[Jost]"
+              className="border border-[#ED728B]/40 text-[#ED728B] text-xs px-3 py-1 rounded-full tracking-wide font-[Jost]"
             >
               {tag}
             </span>
           ))}
         </div>
+      </div>
+
+      {/* Gradient footer */}
+      <div
+        className="px-8 py-5 flex flex-col items-center gap-3"
+        style={{ background: gradient }}
+      >
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="inline-flex items-center gap-1.5 px-6 py-2.5 border-2 border-white text-white font-[Jost] font-medium text-xs tracking-widest uppercase rounded-full hover:bg-white hover:text-[#2C2D2E] transition-all duration-200"
+        >
+          {expanded ? t.readLess : t.readMore}
+          <span
+            className={`transition-transform duration-300 text-sm ${expanded ? 'rotate-180' : ''}`}
+          >
+            ↓
+          </span>
+        </button>
       </div>
     </div>
   );

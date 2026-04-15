@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
-import { imgDark } from '../lib/cloudinary';
 import { useScrollFade } from './useScrollFade';
+
+const CRAFT_GRADIENT = 'linear-gradient(135deg, #C8E6D4, #A8D5BE, #F4D0D8, #F7C7C7)';
 
 export default function CraftLab() {
   const { t } = useLanguage();
@@ -12,60 +13,82 @@ export default function CraftLab() {
     <section
       id="craft-lab"
       ref={ref}
-      className={`relative overflow-hidden bg-[#2C2D2E] transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      className={`bg-white py-24 md:py-32 px-6 transition-all duration-1000 ${
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
     >
-      {/* Background image with overlay */}
-      <div className="absolute inset-0">
-        <img
-          src={imgDark('craft-lab-banner', 1920)}
-          alt="Craft Lab"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-[#2C2D2E]/75" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-3xl mx-auto text-center px-6 py-32 md:py-40">
-        <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-4">
-          Exclusive
-        </p>
-        <h2 className="font-[Baskervville] text-[#FCF7EC] text-4xl md:text-6xl mb-8">
-          {t.craftLab.heading}
-        </h2>
-        <p className="font-[Jost] text-[#FCF7EC]/75 text-lg leading-relaxed mb-4">
-          {t.craftLab.body}
-        </p>
-
-        {/* Expandable details */}
+      <div className="max-w-3xl mx-auto">
+        {/* Card */}
         <div
-          className={`overflow-hidden transition-all duration-500 ${expanded ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0 mb-0'}`}
+          className="rounded-3xl overflow-hidden shadow-lg card-hover"
+          style={{ background: CRAFT_GRADIENT }}
         >
-          <p className="font-[Jost] text-[#FCF7EC]/60 text-base leading-relaxed">{t.craftLab.details}</p>
-        </div>
+          <div className="px-10 py-14 md:px-16 md:py-20 text-center">
+            {/* Eyebrow */}
+            <p className="text-white/80 text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-4">
+              Exclusive
+            </p>
 
-        {/* Learn More / Show Less button */}
-        <div className="flex justify-center mb-8">
-          <button
-            onClick={() => setExpanded(!expanded)}
-            className="flex items-center gap-1 text-[#CB9F5B] text-sm font-[Jost] font-medium tracking-wide hover:text-[#e0b96e] transition-colors duration-200"
-          >
-            {expanded ? t.readLess : t.readMore}
-            <span className={`transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}>
-              ↓
-            </span>
-          </button>
-        </div>
-
-        <div className="flex flex-wrap gap-3 justify-center">
-          {t.craftLab.tags.map((tag) => (
-            <span
-              key={tag}
-              className="border border-[#CB9F5B]/50 text-[#CB9F5B] text-xs px-4 py-1.5 tracking-wider font-[Jost]"
+            {/* Script name */}
+            <h2
+              className="font-script text-white leading-none mb-4"
+              style={{ fontSize: 'clamp(3.5rem, 10vw, 6rem)' }}
             >
-              {tag}
-            </span>
-          ))}
+              Craft Lab
+            </h2>
+
+            {/* Thin separator */}
+            <div className="flex items-center justify-center mb-6">
+              <div className="w-12 h-px bg-white/50" />
+            </div>
+
+            {/* Body */}
+            <p className="font-[Baskervville] text-white text-lg italic leading-relaxed mb-4">
+              {t.craftLab.body}
+            </p>
+
+            {/* Expandable details */}
+            <div
+              className={`overflow-hidden transition-all duration-500 ${
+                expanded ? 'max-h-60 opacity-100 mb-6' : 'max-h-0 opacity-0 mb-0'
+              }`}
+            >
+              <p className="font-[Jost] text-white/80 text-sm leading-relaxed mt-2">
+                {t.craftLab.details}
+              </p>
+            </div>
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-3 justify-center mb-8">
+              {t.craftLab.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="border border-white/60 text-white text-xs px-4 py-1.5 rounded-full tracking-wider font-[Jost]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* CTA button */}
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="inline-flex items-center gap-1.5 px-8 py-3 border-2 border-white text-white font-[Jost] font-medium text-xs tracking-widest uppercase rounded-full hover:bg-white hover:text-[#2C2D2E] transition-all duration-200"
+            >
+              {expanded ? t.readLess : t.readMore}
+              <span
+                className={`transition-transform duration-300 text-sm ${expanded ? 'rotate-180' : ''}`}
+              >
+                ↓
+              </span>
+            </button>
+          </div>
         </div>
+
+        {/* Exclusivity note */}
+        <p className="text-center font-[Jost] text-[#2C2D2E]/40 text-xs tracking-widest uppercase mt-8">
+          Limited to 50 partners worldwide
+        </p>
       </div>
     </section>
   );

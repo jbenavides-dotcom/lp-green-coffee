@@ -5,6 +5,8 @@
   --color-gold: #CB9F5B;
   --color-light: #FCF7EC;
   --color-pink: #ED728B;
+  --color-cream: #FCF7EC;
+  --color-hero-bg: #FDEEF0;
 }
 
 html {
@@ -13,7 +15,7 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--color-dark);
+  background-color: var(--color-cream);
   color: var(--color-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,6 +23,11 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+/* Great Vibes font utility */
+.font-script {
+  font-family: 'Great Vibes', cursive;
 }
 
 /* Remove default select styles */
@@ -31,4 +38,13 @@ select {
   background-repeat: no-repeat;
   background-position: right 0 center;
   padding-right: 20px;
+}
+
+/* Smooth card hover */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(44,45,46,0.12);
 }

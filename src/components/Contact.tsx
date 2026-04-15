@@ -18,79 +18,77 @@ export default function Contact() {
       headers: { Accept: 'application/json' },
     })
       .then(() => setSubmitted(true))
-      .catch(() => setSubmitted(true)); // show success even on placeholder
+      .catch(() => setSubmitted(true));
   };
+
+  const inputClass =
+    'w-full border border-[#E5E0D0] bg-white rounded py-3 px-4 font-[Jost] text-[#2C2D2E] text-sm focus:outline-none focus:border-[#ED728B] transition-colors placeholder:text-[#2C2D2E]/30';
+
+  const labelClass =
+    'block font-[Jost] text-xs tracking-widest uppercase text-[#2C2D2E]/50 mb-1.5';
 
   return (
     <section
       id="contact"
       ref={ref}
-      className={`bg-[#FCF7EC] py-24 md:py-32 px-6 transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      className={`bg-white py-24 md:py-32 px-6 transition-all duration-1000 ${
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
     >
       <div className="max-w-2xl mx-auto">
-        <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-3 text-center">
-          Partnership
-        </p>
-        <h2 className="font-[Baskervville] text-[#2C2D2E] text-3xl md:text-4xl text-center mb-12 leading-snug">
-          {t.contact.heading}
-        </h2>
+        {/* Header */}
+        <div className="text-center mb-14">
+          <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-3">
+            Partnership
+          </p>
+          <h2 className="font-[Baskervville] text-[#2C2D2E] text-3xl md:text-4xl leading-snug mb-4">
+            {t.contact.heading}
+          </h2>
+          <div className="flex items-center justify-center gap-3">
+            <div className="w-12 h-px bg-[#ED728B]/30" />
+            <div className="w-1.5 h-1.5 rounded-full bg-[#ED728B]/40" />
+            <div className="w-12 h-px bg-[#ED728B]/30" />
+          </div>
+        </div>
 
         {submitted ? (
-          <div className="text-center py-16">
-            <p className="font-[Baskervville] text-[#2C2D2E] text-2xl mb-3">Thank you.</p>
-            <p className="font-[Jost] text-[#2C2D2E]/60">We'll be in touch soon.</p>
+          <div className="text-center py-16 bg-[#FDEEF0] rounded-3xl">
+            <p
+              className="font-script text-[#ED728B] mb-3"
+              style={{ fontSize: '3rem' }}
+            >
+              Thank you
+            </p>
+            <p className="font-[Jost] text-[#2C2D2E]/60 text-sm">
+              We'll be in touch soon.
+            </p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
-                <label className="block font-[Jost] text-xs tracking-widest uppercase text-[#2C2D2E]/50 mb-1.5">
-                  {t.contact.name}
-                </label>
-                <input
-                  name="name"
-                  required
-                  className="w-full border-b border-[#2C2D2E]/20 bg-transparent py-2.5 font-[Jost] text-[#2C2D2E] text-sm focus:outline-none focus:border-[#CB9F5B] transition-colors"
-                />
+                <label className={labelClass}>{t.contact.name}</label>
+                <input name="name" required className={inputClass} />
               </div>
               <div>
-                <label className="block font-[Jost] text-xs tracking-widest uppercase text-[#2C2D2E]/50 mb-1.5">
-                  {t.contact.email}
-                </label>
-                <input
-                  name="email"
-                  type="email"
-                  required
-                  className="w-full border-b border-[#2C2D2E]/20 bg-transparent py-2.5 font-[Jost] text-[#2C2D2E] text-sm focus:outline-none focus:border-[#CB9F5B] transition-colors"
-                />
+                <label className={labelClass}>{t.contact.email}</label>
+                <input name="email" type="email" required className={inputClass} />
               </div>
               <div>
-                <label className="block font-[Jost] text-xs tracking-widest uppercase text-[#2C2D2E]/50 mb-1.5">
-                  {t.contact.company}
-                </label>
-                <input
-                  name="company"
-                  className="w-full border-b border-[#2C2D2E]/20 bg-transparent py-2.5 font-[Jost] text-[#2C2D2E] text-sm focus:outline-none focus:border-[#CB9F5B] transition-colors"
-                />
+                <label className={labelClass}>{t.contact.company}</label>
+                <input name="company" className={inputClass} />
               </div>
               <div>
-                <label className="block font-[Jost] text-xs tracking-widest uppercase text-[#2C2D2E]/50 mb-1.5">
-                  {t.contact.country}
-                </label>
-                <input
-                  name="country"
-                  className="w-full border-b border-[#2C2D2E]/20 bg-transparent py-2.5 font-[Jost] text-[#2C2D2E] text-sm focus:outline-none focus:border-[#CB9F5B] transition-colors"
-                />
+                <label className={labelClass}>{t.contact.country}</label>
+                <input name="country" className={inputClass} />
               </div>
             </div>
 
             <div>
-              <label className="block font-[Jost] text-xs tracking-widest uppercase text-[#2C2D2E]/50 mb-1.5">
-                {t.contact.interest}
-              </label>
+              <label className={labelClass}>{t.contact.interest}</label>
               <select
                 name="interest"
-                className="w-full border-b border-[#2C2D2E]/20 bg-transparent py-2.5 font-[Jost] text-[#2C2D2E] text-sm focus:outline-none focus:border-[#CB9F5B] transition-colors appearance-none"
+                className={`${inputClass} cursor-pointer`}
               >
                 <option value="">{t.contact.selectInterest}</option>
                 {t.contact.interestOptions.map((opt) => (
@@ -102,20 +100,18 @@ export default function Contact() {
             </div>
 
             <div>
-              <label className="block font-[Jost] text-xs tracking-widest uppercase text-[#2C2D2E]/50 mb-1.5">
-                {t.contact.message}
-              </label>
+              <label className={labelClass}>{t.contact.message}</label>
               <textarea
                 name="message"
                 rows={4}
-                className="w-full border-b border-[#2C2D2E]/20 bg-transparent py-2.5 font-[Jost] text-[#2C2D2E] text-sm focus:outline-none focus:border-[#CB9F5B] transition-colors resize-none"
+                className={`${inputClass} resize-none`}
               />
             </div>
 
             <div className="pt-4 text-center">
               <button
                 type="submit"
-                className="inline-block px-12 py-4 bg-[#ED728B] text-white font-[Jost] font-medium text-sm tracking-widest uppercase hover:bg-[#d96178] transition-colors duration-200"
+                className="inline-block px-12 py-4 bg-[#ED728B] text-white font-[Jost] font-medium text-sm tracking-widest uppercase rounded-full hover:bg-[#d96178] transition-all duration-200 shadow-md hover:shadow-lg"
               >
                 {t.contact.submit}
               </button>

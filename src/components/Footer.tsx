@@ -37,12 +37,12 @@ export default function Footer() {
         <img
           src={img('logo', 200)}
           alt="La Palma y El Tucán"
-          className="h-12 w-auto object-contain mx-auto mb-8 opacity-80"
+          className="h-12 w-auto object-contain mx-auto mb-8 opacity-75"
         />
 
         {/* Tagline */}
-        <p className="font-[Baskervville] text-[#FCF7EC]/60 text-lg italic max-w-xl mx-auto mb-8 leading-relaxed">
-          "{t.footer.tagline}"
+        <p className="font-[Baskervville] text-[#FCF7EC]/55 text-lg italic max-w-xl mx-auto mb-10 leading-relaxed">
+          &ldquo;{t.footer.tagline}&rdquo;
         </p>
 
         {/* Social icons */}
@@ -52,7 +52,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="text-[#FCF7EC]/40 hover:text-[#CB9F5B] transition-colors"
+            className="text-[#FCF7EC]/35 hover:text-[#ED728B] transition-colors duration-200"
           >
             <IconInstagram />
           </a>
@@ -61,7 +61,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            className="text-[#FCF7EC]/40 hover:text-[#CB9F5B] transition-colors"
+            className="text-[#FCF7EC]/35 hover:text-[#ED728B] transition-colors duration-200"
           >
             <IconFacebook />
           </a>
@@ -70,15 +70,15 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="TikTok"
-            className="text-[#FCF7EC]/40 hover:text-[#CB9F5B] transition-colors"
+            className="text-[#FCF7EC]/35 hover:text-[#ED728B] transition-colors duration-200"
           >
             <IconTikTok />
           </a>
         </div>
 
-        {/* Divider */}
+        {/* Divider + copyright */}
         <div className="border-t border-[#FCF7EC]/10 pt-8">
-          <p className="font-[Jost] text-[#FCF7EC]/30 text-xs tracking-widest">
+          <p className="font-[Jost] font-light text-[#FCF7EC]/25 text-xs tracking-widest">
             {t.footer.copyright}
           </p>
         </div>
