@@ -6,7 +6,11 @@ export const translations = {
       toggle: 'ES',
     },
     hero: {
-      title: 'Green Coffee Series',
+      kicker: 'LA PALMA Y EL TUCÁN — COLOMBIA',
+      titlePrefix: 'Meet',
+      titleScript: 'our',
+      titleSuffix: 'new',
+      watermark: 'Green Coffee Series',
       subtitle: 'Today, we stand for a more honest kind of specialty coffee. Welcome to this new era.',
     },
     intro: {
@@ -81,7 +85,11 @@ export const translations = {
       toggle: 'EN',
     },
     hero: {
-      title: 'Green Coffee Series',
+      kicker: 'LA PALMA Y EL TUCÁN — COLOMBIA',
+      titlePrefix: 'Conoce',
+      titleScript: 'nuestra',
+      titleSuffix: 'nueva',
+      watermark: 'Serie Café Verde',
       subtitle: 'Hoy defendemos un café de especialidad más honesto. Bienvenidos a una nueva era.',
     },
     intro: {
