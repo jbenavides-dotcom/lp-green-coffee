@@ -6,7 +6,8 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white"
+      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, #FCF7EC 0%, #F7EFD9 100%)' }}
     >
       {/* Watermark: "Green Coffee Series" in brand pink at 10% opacity */}
       <h1
