@@ -25,15 +25,15 @@ export default function CollaborativeCoffees() {
         {/* La Amistad card */}
         <div className="flex flex-col md:flex-row gap-0 max-w-5xl mx-auto shadow-lg overflow-hidden">
           {/* Image */}
-          <div className="md:w-1/2 aspect-[4/3] overflow-hidden bg-[#2C2D2E]">
+          <div className="md:w-2/5 aspect-square overflow-hidden bg-[#2C2D2E]">
             <img
-              src={img('la-amistad', 800)}
+              src={img('la-amistad', 600)}
               alt="La Amistad"
-              className="w-full h-full object-cover object-[center_20%] hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
             />
           </div>
           {/* Content */}
-          <div className="md:w-1/2 bg-[#2C2D2E] flex flex-col justify-center px-10 py-12 md:px-16">
+          <div className="md:w-3/5 bg-[#2C2D2E] flex flex-col justify-center px-10 py-12 md:px-16">
             <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-4">
               Collaborative
             </p>
