@@ -21,10 +21,10 @@ export default function CraftLab() {
       <div className="max-w-3xl mx-auto">
         {/* Card */}
         <div
-          className="rounded-3xl overflow-hidden shadow-lg card-hover"
+          className="rounded-3xl shadow-lg card-hover"
           style={{ background: CRAFT_GRADIENT }}
         >
-          <div className="px-10 py-12 md:px-16 md:py-16 text-center">
+          <div className="px-8 py-10 md:px-16 md:py-14 text-center overflow-hidden rounded-3xl">
             {/* Eyebrow */}
             <p className="text-white/80 text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-4">
               Exclusive

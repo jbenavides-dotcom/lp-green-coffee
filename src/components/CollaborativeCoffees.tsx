@@ -44,7 +44,7 @@ export default function CollaborativeCoffees() {
                 alt="La Amistad"
                 loading="lazy"
                 decoding="async"
-                className="w-full max-h-[250px] md:max-h-none object-cover object-center hover:scale-105 transition-transform duration-700"
+                className="w-full aspect-[4/3] md:aspect-auto max-h-[280px] md:max-h-[520px] object-cover object-center hover:scale-105 transition-transform duration-700"
               />
             </div>
 
