@@ -35,8 +35,12 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto text-center">
         {/* Logo */}
         <img
-          src={img('logo', 200)}
+          src={img('logo', 400)}
+          srcSet={`${img('logo', 300)} 300w, ${img('logo', 600)} 600w, ${img('logo', 900)} 900w`}
+          sizes="(max-width: 768px) 200px, 250px"
           alt="La Palma y El Tucán"
+          width={200}
+          height={42}
           className="h-12 w-auto object-contain mx-auto mb-8 opacity-75"
         />
 

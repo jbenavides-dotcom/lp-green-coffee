@@ -46,8 +46,12 @@ export default function Header() {
         {/* Logo — centered */}
         <a href="#hero" className="flex items-center mx-auto md:mx-0 md:absolute md:left-1/2 md:-translate-x-1/2">
           <img
-            src={img('logo', 200)}
+            src={img('logo', 400)}
+            srcSet={`${img('logo', 300)} 300w, ${img('logo', 600)} 600w, ${img('logo', 900)} 900w`}
+            sizes="(max-width: 768px) 200px, 250px"
             alt="La Palma y El Tucán"
+            width={200}
+            height={42}
             className="h-14 md:h-16 w-auto object-contain"
           />
         </a>
