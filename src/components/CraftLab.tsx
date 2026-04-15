@@ -53,7 +53,7 @@ export default function CraftLab() {
                 className="w-full h-full object-cover"
               />
               {/* Dark gradient overlay for legibility */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#2C2D2E]/90 via-[#2C2D2E]/80 to-[#2C2D2E]/85" />
+              <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/35 to-black/60" />
               {/* Text overlay */}
               <p
                 className="absolute inset-0 flex items-center justify-center text-center px-6 md:px-10 font-[Tenor_Sans] text-white text-2xl md:text-4xl lg:text-5xl leading-tight"
