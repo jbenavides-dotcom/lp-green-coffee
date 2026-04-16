@@ -9,6 +9,7 @@ interface CoffeeCardProps {
   details: string;
   tags: readonly string[];
   gradient: string;
+  compact?: boolean;
 }
 
 export default function CoffeeCard({
@@ -17,6 +18,7 @@ export default function CoffeeCard({
   details,
   tags,
   gradient,
+  compact = false,
 }: CoffeeCardProps) {
   const { ref, visible } = useScrollFade<HTMLDivElement>();
   const { t } = useLanguage();
@@ -30,11 +32,11 @@ export default function CoffeeCard({
       }`}
     >
       {/* Card body */}
-      <div className="flex flex-col flex-1 p-5 pb-4 md:p-8 md:pb-6">
+      <div className={`flex flex-col flex-1 ${compact ? 'p-5 md:p-6' : 'p-5 pb-4 md:p-8 md:pb-6'}`}>
         {/* Name in Great Vibes */}
         <h3
           className="font-script text-[#2C2D2E] text-center mb-3 leading-none"
-          style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}
+          style={{ fontSize: compact ? 'clamp(2.25rem, 4vw, 3rem)' : 'clamp(2.5rem, 6vw, 4.5rem)' }}
         >
           {name.charAt(0) + name.slice(1).toLowerCase()}
         </h3>
@@ -45,7 +47,7 @@ export default function CoffeeCard({
         </div>
 
         {/* Body text */}
-        <p className="font-[Tenor_Sans] text-[#2C2D2E]/70 text-base italic leading-relaxed text-center mb-3">
+        <p className={`font-[Tenor_Sans] text-[#2C2D2E]/70 text-base italic leading-relaxed text-center mb-3 ${compact && !expanded ? 'line-clamp-3' : ''}`}>
           {body}
         </p>
 
@@ -61,7 +63,7 @@ export default function CoffeeCard({
         </div>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 justify-center mb-5 mt-auto">
+        <div className={`flex flex-wrap justify-center mb-5 mt-auto ${compact ? 'gap-1.5' : 'gap-2'}`}>
           {tags.map((tag) => (
             <span
               key={tag}

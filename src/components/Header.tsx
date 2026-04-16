@@ -14,11 +14,10 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { href: '#intro', label: lang === 'en' ? 'About' : 'Nosotros' },
-    { href: '#estate', label: lang === 'en' ? 'Our Lines' : 'Nuestras Líneas' },
-    { href: '#collaborative', label: lang === 'en' ? 'Collaborative' : 'Colaborativo' },
-    { href: '#craft-lab', label: 'Craft Lab' },
-    { href: '#contact', label: lang === 'en' ? 'Contact' : 'Contacto' },
+    { href: '#narrative-lines', label: lang === 'en' ? 'Our Lines' : 'Nuestras Líneas' },
+    { href: '#community-lab', label: lang === 'en' ? 'Collaborative' : 'Colaborativo' },
+    { href: '#community-lab', label: 'Craft Lab' },
+    { href: '#hero2', label: lang === 'en' ? 'Contact' : 'Contacto' },
   ];
 
   return (

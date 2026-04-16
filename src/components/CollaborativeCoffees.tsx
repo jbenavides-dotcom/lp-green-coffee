@@ -1,3 +1,4 @@
+// @deprecated — absorbido en NarrativeAndLines / CommunityAndLab (2026-04-17)
 import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
