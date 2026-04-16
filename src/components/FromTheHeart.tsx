@@ -3,7 +3,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
 
 export default function FromTheHeart() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const { ref, visible } = useScrollFade<HTMLElement>();
 
   const bodyLines = t.fromTheHeart.body.split('\n');
@@ -29,11 +29,15 @@ export default function FromTheHeart() {
         </p>
 
         {/* Body */}
-        <div className="font-[Tenor_Sans] text-[#2C2D2E]/80 text-lg leading-relaxed">
+        <div
+          lang={lang}
+          className="font-[Tenor_Sans] text-[#2C2D2E]/80 text-base md:text-lg leading-relaxed text-justify hyphens-auto"
+          style={{ textJustify: 'inter-word' }}
+        >
           {bodyLines.map((line, i) => (
-            <span key={i} className="block mb-4">
+            <p key={i} className="mb-4 text-justify">
               {line}
-            </span>
+            </p>
           ))}
         </div>
 

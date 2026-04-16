@@ -9,7 +9,7 @@ const GRADIENTS: Record<string, string> = {
 };
 
 export default function NarrativeAndLines() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const { ref, visible } = useScrollFade<HTMLElement>();
   const bodyLines = t.fromTheHeart.body.split('\n');
 
@@ -25,9 +25,13 @@ export default function NarrativeAndLines() {
           <p className="font-[Jost] uppercase tracking-[0.4em] text-[#CB9F5B] text-xs">
             {t.fromTheHeart.eyebrow}
           </p>
-          <div className="space-y-4 font-[Tenor_Sans] text-[#2C2D2E] text-lg leading-relaxed italic">
+          <div
+            lang={lang}
+            className="space-y-4 font-[Tenor_Sans] text-[#2C2D2E] text-base md:text-lg leading-relaxed italic text-justify hyphens-auto"
+            style={{ textJustify: 'inter-word' }}
+          >
             {bodyLines.map((line, i) => (
-              <p key={i}>{line}</p>
+              <p key={i} className="text-justify">{line}</p>
             ))}
           </div>
           <div className="w-16 h-px bg-[#CB9F5B]" />
