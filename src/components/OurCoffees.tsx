@@ -1,20 +1,18 @@
-import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
 import CoffeeCard from './CoffeeCard';
-// Cloudinary URLs hardcoded inline with full transforms
 
 const GRADIENTS: Record<string, string> = {
   connect: 'linear-gradient(135deg, #E11D48, #9B1B47)',
   pulse: 'linear-gradient(135deg, #9B1B47, #E11D48)',
   beat: 'linear-gradient(135deg, #E11D48, #CB9F5B)',
+  laAmistad: 'linear-gradient(135deg, #9B1B47, #CB9F5B)',
+  craftLab: 'linear-gradient(135deg, #CB9F5B, #E11D48)',
 };
 
 export default function OurCoffees() {
   const { t } = useLanguage();
   const { ref, visible } = useScrollFade<HTMLElement>();
-  const [amistadExpanded, setAmistadExpanded] = useState(false);
-  const [labExpanded, setLabExpanded] = useState(false);
 
   return (
     <section
@@ -58,98 +56,25 @@ export default function OurCoffees() {
           <p className="font-[Jost] uppercase tracking-[0.3em] text-[10px] text-[#9B1B47]/70 mb-4 text-center">
             {t.ourCoffees.collabEyebrow}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto items-start">
-            {/* La Amistad */}
-            <article className="flex flex-col space-y-3">
-              <div className="relative overflow-hidden rounded-2xl shadow-lg aspect-[16/9] w-full bg-[#F1ECDF]">
-                <img
-                  src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1800,c_fill,g_center,ar_16:9/lp-green-coffee/la-amistad"
-                  alt="La Amistad — collaborative coffees from neighboring farms"
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-              <h3
-                className="font-script text-[#2C2D2E] text-center leading-none"
-                style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)' }}
-              >
-                La Amistad
-              </h3>
-              <div className="flex-1">
-                <p className="font-[Tenor_Sans] italic text-sm text-[#2C2D2E]/75 leading-relaxed line-clamp-3">
-                  {t.laAmistad.body}
-                </p>
-                <div className={`overflow-hidden transition-all duration-500 ${amistadExpanded ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
-                  <p className="font-[Jost] text-[#2C2D2E]/60 text-sm leading-relaxed">
-                    {t.laAmistad.details}
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {t.laAmistad.tags.map((tag) => (
-                  <span key={tag} className="text-[10px] tracking-[0.15em] uppercase px-2.5 py-1 rounded-full bg-[#9B1B47]/10 text-[#9B1B47] font-[Jost]">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <button
-                onClick={() => setAmistadExpanded(!amistadExpanded)}
-                className="font-[Jost] text-xs tracking-[0.2em] uppercase text-[#9B1B47] hover:text-[#E11D48] transition-colors duration-200 text-left"
-              >
-                {amistadExpanded ? t.readLess : t.readMore} →
-              </button>
-            </article>
-
-            {/* Craft Lab */}
-            <article className="flex flex-col space-y-3">
-              <div className="relative overflow-hidden rounded-2xl shadow-lg aspect-[16/9] w-full bg-[#F1ECDF]">
-                <img
-                  src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1800,c_fill,g_center,ar_16:9/lp-green-coffee/craft-lab-banner"
-                  alt="Craft Lab"
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <h3
-                  className="font-script text-[#2C2D2E] text-center leading-none"
-                  style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)' }}
-                >
-                  Craft Lab
-                </h3>
-                <p className="font-[Tenor_Sans] italic text-[#9B1B47] text-sm mt-1">
-                  {t.craftLab.imageQuote}
-                </p>
-              </div>
-              <div className="flex-1">
-                <p className="font-[Tenor_Sans] italic text-sm text-[#2C2D2E]/75 leading-relaxed line-clamp-3">
-                  {t.craftLab.body}
-                </p>
-                <div className={`overflow-hidden transition-all duration-500 ${labExpanded ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
-                  <p className="font-[Jost] text-[#2C2D2E]/60 text-sm leading-relaxed">
-                    {t.craftLab.details}
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {t.craftLab.tags.map((tag) => (
-                  <span key={tag} className="text-[10px] tracking-[0.15em] uppercase px-2.5 py-1 rounded-full bg-[#9B1B47]/10 text-[#9B1B47] font-[Jost]">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <button
-                onClick={() => setLabExpanded(!labExpanded)}
-                className="font-[Jost] text-xs tracking-[0.2em] uppercase text-[#9B1B47] hover:text-[#E11D48] transition-colors duration-200 text-left"
-              >
-                {labExpanded ? t.readLess : t.readMore} →
-              </button>
-              <p className="font-[Jost] text-[10px] tracking-[0.2em] uppercase text-[#2C2D2E]/50 mt-auto">
-                Limited to 50 partners worldwide
-              </p>
-            </article>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            <CoffeeCard
+              mini
+              imageName="la-amistad"
+              name={t.laAmistad.name}
+              body={t.laAmistad.body}
+              details={t.laAmistad.details}
+              tags={t.laAmistad.tags}
+              gradient={GRADIENTS.laAmistad}
+            />
+            <CoffeeCard
+              mini
+              imageName="craft-lab-banner"
+              name={t.craftLab.name}
+              body={t.craftLab.body}
+              details={t.craftLab.details}
+              tags={t.craftLab.tags}
+              gradient={GRADIENTS.craftLab}
+            />
           </div>
         </div>
       </div>

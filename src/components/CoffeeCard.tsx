@@ -41,7 +41,7 @@ export default function CoffeeCard({
             className="font-script text-[#2C2D2E] text-center leading-none"
             style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)' }}
           >
-            {name.charAt(0) + name.slice(1).toLowerCase()}
+            {name.split(' ').map(w => w.charAt(0) + w.slice(1).toLowerCase()).join(' ')}
           </h3>
 
           {/* Thin pink separator */}
@@ -87,7 +87,7 @@ export default function CoffeeCard({
           className={`font-script text-[#2C2D2E] text-center leading-none ${compact ? '' : 'mb-3'}`}
           style={{ fontSize: compact ? 'clamp(1.75rem, 3vw, 2.25rem)' : 'clamp(2.5rem, 6vw, 4.5rem)' }}
         >
-          {name.charAt(0) + name.slice(1).toLowerCase()}
+          {name.split(' ').map(w => w.charAt(0) + w.slice(1).toLowerCase()).join(' ')}
         </h3>
 
         {/* Thin pink separator */}
