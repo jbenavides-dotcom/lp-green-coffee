@@ -71,8 +71,8 @@ export default function OurCoffees() {
                 />
               </div>
               <h3
-                className="font-script text-[#2C2D2E] leading-none"
-                style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)' }}
+                className="font-script text-[#2C2D2E] text-center leading-none"
+                style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)' }}
               >
                 La Amistad
               </h3>
@@ -114,8 +114,8 @@ export default function OurCoffees() {
               </div>
               <div>
                 <h3
-                  className="font-script text-[#2C2D2E] leading-none"
-                  style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)' }}
+                  className="font-script text-[#2C2D2E] text-center leading-none"
+                  style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)' }}
                 >
                   Craft Lab
                 </h3>
