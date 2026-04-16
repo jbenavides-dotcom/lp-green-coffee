@@ -31,7 +31,7 @@ export default function OurCoffees() {
           <h2 className="font-[Tenor_Sans] text-2xl md:text-3xl text-[#2C2D2E]">
             {t.ourCoffees.heading}
           </h2>
-          <p className="font-[Tenor_Sans] italic text-sm text-[#2C2D2E]/70 mt-3 max-w-xl mx-auto">
+          <p className="font-[Tenor_Sans] italic text-base md:text-lg text-[#2C2D2E]/80 mt-4 max-w-xl mx-auto">
             {t.ourCoffees.sub}
           </p>
         </div>
