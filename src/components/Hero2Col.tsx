@@ -33,14 +33,14 @@ export default function Hero2Col() {
     <section
       id="hero2"
       ref={ref}
-      className={`min-h-[90vh] px-6 py-16 md:py-0 flex items-center transition-all duration-1000 ${
+      className={`min-h-screen px-6 py-20 md:py-24 flex items-center transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{ background: 'linear-gradient(180deg, #FCF7EC 0%, #FCF7EC 60%, #FFFFFF 100%)' }}
     >
-      <div className="max-w-6xl mx-auto w-full grid md:grid-cols-12 items-center gap-12 md:gap-0">
+      <div className="max-w-6xl mx-auto w-full grid md:grid-cols-12 items-start gap-10 md:gap-12">
         {/* Left column */}
-        <div className="md:col-span-6 md:pr-8">
+        <div className="md:col-span-5 md:pt-6">
           {/* Kicker */}
           <p className="font-[Jost] uppercase tracking-[0.25em] text-[#2D5A3D] text-xs mb-6">
             {t.hero2.kicker}
@@ -49,7 +49,7 @@ export default function Hero2Col() {
           {/* Title */}
           <h1
             className="font-script text-[#CB9F5B] leading-none mb-8"
-            style={{ fontSize: 'clamp(4rem, 9vw, 7rem)' }}
+            style={{ fontSize: 'clamp(3rem, 6.5vw, 5rem)' }}
           >
             {t.hero2.title}
           </h1>
@@ -69,8 +69,8 @@ export default function Hero2Col() {
         </div>
 
         {/* Right column — card */}
-        <div className="md:col-span-6">
-          <div className="bg-white rounded-3xl shadow-sm p-8 md:p-10 border border-[#2C2D2E]/5">
+        <div className="md:col-span-7 order-first md:order-none">
+          <div className="bg-white rounded-3xl shadow-md p-7 md:p-8 border border-[#2C2D2E]/5">
             {submitted ? (
               <div className="text-center py-8">
                 <p
@@ -129,7 +129,7 @@ export default function Hero2Col() {
                 {/* Textarea */}
                 <div>
                   <label className={labelClass}>{t.hero2.message}</label>
-                  <textarea name="message" rows={2} className={`${inputClass} resize-none`} />
+                  <textarea name="message" rows={1} className={`${inputClass} resize-none`} />
                 </div>
 
                 {/* microCopy + button */}
