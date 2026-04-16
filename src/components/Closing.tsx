@@ -9,9 +9,10 @@ export default function Closing() {
     <section
       id="closing"
       ref={ref}
-      className={`bg-[#FCF7EC] py-24 px-6 text-center transition-all duration-1000 ${
+      className={`py-24 px-6 text-center transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
+      style={{ background: 'linear-gradient(180deg, #FCF7EC 0%, #FCF7EC 75%, #E8DFC8 90%, #B8A88A 100%)' }}
     >
       <div className="max-w-3xl mx-auto">
         {/* 1. Kicker */}

@@ -16,9 +16,10 @@ export default function Lines() {
     <section
       id="lines"
       ref={ref}
-      className={`bg-white py-16 md:py-20 px-6 transition-all duration-1000 ${
+      className={`py-16 md:py-20 px-6 transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
+      style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 60%, #FCF7EC 100%)' }}
     >
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
