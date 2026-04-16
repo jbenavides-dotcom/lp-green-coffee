@@ -104,6 +104,9 @@ export default function Hero2Col() {
 
         {/* Right column — form */}
         <div className="md:col-span-6 order-first md:order-none">
+          <p className="font-[Tenor_Sans] text-[#9B1B47] text-center text-base md:text-lg mb-4 tracking-wide">
+            Secure Priority Access to Our Coffees
+          </p>
           <div className="bg-white rounded-3xl shadow-md p-7 md:p-8 border border-[#2C2D2E]/5">
             {submitted ? (
               <div className="text-center py-8">
