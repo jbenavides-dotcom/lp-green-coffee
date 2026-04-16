@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
 import CoffeeCard from './CoffeeCard';
-import { imgTrim, imgCrop } from '../lib/cloudinary';
+import { img, imgCrop } from '../lib/cloudinary';
 
 const GRADIENTS: Record<string, string> = {
   connect: 'linear-gradient(135deg, #E11D48, #9B1B47)',
@@ -61,13 +61,13 @@ export default function OurCoffees() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto items-start">
             {/* La Amistad */}
             <article className="flex flex-col space-y-3">
-              <div className="aspect-square overflow-hidden rounded-2xl bg-white">
+              <div className="aspect-[16/10] overflow-hidden rounded-2xl bg-white flex items-center justify-center p-6">
                 <img
-                  src={imgTrim('la-amistad', 900, 20)}
+                  src={img('la-amistad', 1200)}
                   alt="La Amistad"
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-contain"
+                  className="w-full h-auto max-h-full object-contain"
                 />
               </div>
               <h3 className="font-[Tenor_Sans] text-xl text-[#2C2D2E]">La Amistad</h3>
