@@ -35,11 +35,11 @@ export default function CoffeeCard({
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
-        <div className="flex flex-col flex-1 p-4 space-y-1.5">
+        <div className="flex flex-col flex-1 p-4 pt-5 space-y-1.5">
           {/* Name */}
           <h3
-            className="font-script text-[#2C2D2E] text-center leading-none"
-            style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)' }}
+            className="font-script text-[#2C2D2E] text-center leading-[1.15] pb-1"
+            style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)' }}
           >
             {name.split(' ').map(w => w.charAt(0) + w.slice(1).toLowerCase()).join(' ')}
           </h3>
