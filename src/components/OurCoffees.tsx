@@ -20,10 +20,9 @@ export default function OurCoffees() {
     <section
       id="coffees"
       ref={ref}
-      className={`py-16 md:py-20 px-6 transition-all duration-1000 ${
+      className={`bg-white py-16 md:py-20 px-6 transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
-      style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 40%, #FCF7EC 100%)' }}
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
