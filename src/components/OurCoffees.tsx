@@ -61,13 +61,13 @@ export default function OurCoffees() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto items-start">
             {/* La Amistad */}
             <article className="flex flex-col space-y-3">
-              <div className="aspect-[16/10] overflow-hidden rounded-2xl bg-white flex items-center justify-center p-6">
+              <div className="relative overflow-hidden rounded-2xl shadow-lg aspect-[16/9] w-full bg-[#F1ECDF]">
                 <img
-                  src={img('la-amistad', 1200)}
-                  alt="La Amistad"
+                  src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1800,c_fill,g_center,ar_16:9/lp-green-coffee/la-amistad"
+                  alt="La Amistad — collaborative coffees from neighboring farms"
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-auto max-h-full object-contain"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
               <h3 className="font-[Tenor_Sans] text-xl text-[#2C2D2E]">La Amistad</h3>
@@ -98,13 +98,13 @@ export default function OurCoffees() {
 
             {/* Craft Lab */}
             <article className="flex flex-col space-y-3">
-              <div className="aspect-[16/10] overflow-hidden rounded-2xl bg-[#F1ECDF]">
+              <div className="relative overflow-hidden rounded-2xl shadow-lg aspect-[16/9] w-full bg-[#F1ECDF]">
                 <img
-                  src={imgCrop('craft-lab-banner', 900, '16:10')}
+                  src="https://res.cloudinary.com/dkqocgknd/image/upload/f_auto,q_auto,w_1800,c_fill,g_center,ar_16:9/lp-green-coffee/craft-lab-banner"
                   alt="Craft Lab"
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover object-center"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
               <div>
