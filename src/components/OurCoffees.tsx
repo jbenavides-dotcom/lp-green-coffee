@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
 import CoffeeCard from './CoffeeCard';
-import { imgFillAuto, imgCrop } from '../lib/cloudinary';
+import { img, imgCrop } from '../lib/cloudinary';
 
 const GRADIENTS: Record<string, string> = {
   connect: 'linear-gradient(135deg, #E11D48, #9B1B47)',
@@ -58,16 +58,16 @@ export default function OurCoffees() {
           <p className="font-[Jost] uppercase tracking-[0.3em] text-[10px] text-[#9B1B47]/70 mb-4 text-center">
             {t.ourCoffees.collabEyebrow}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto items-start">
             {/* La Amistad */}
-            <article className="h-full flex flex-col space-y-3">
-              <div className="aspect-[16/10] overflow-hidden rounded-2xl bg-[#F1ECDF]">
+            <article className="flex flex-col space-y-3">
+              <div className="aspect-square overflow-hidden rounded-2xl bg-[#F1ECDF]">
                 <img
-                  src={imgFillAuto('la-amistad', 900, '16:10')}
+                  src={img('la-amistad', 900)}
                   alt="La Amistad"
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <h3 className="font-[Tenor_Sans] text-xl text-[#2C2D2E]">La Amistad</h3>
@@ -97,7 +97,7 @@ export default function OurCoffees() {
             </article>
 
             {/* Craft Lab */}
-            <article className="h-full flex flex-col space-y-3">
+            <article className="flex flex-col space-y-3">
               <div className="aspect-[16/10] overflow-hidden rounded-2xl bg-[#F1ECDF]">
                 <img
                   src={imgCrop('craft-lab-banner', 900, '16:10')}
