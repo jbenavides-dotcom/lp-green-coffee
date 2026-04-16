@@ -99,14 +99,6 @@ export default function Hero2Col() {
                 {statsLabels.altitude}
               </p>
             </div>
-            <div>
-              <p className="font-[Tenor_Sans] text-[#9B1B47] text-2xl leading-none">
-                100
-              </p>
-              <p className="font-[Jost] text-[9px] tracking-[0.2em] uppercase text-[#2C2D2E]/55 mt-1">
-                {statsLabels.families}
-              </p>
-            </div>
           </div>
         </div>
 
