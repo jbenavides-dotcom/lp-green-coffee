@@ -70,7 +70,12 @@ export default function OurCoffees() {
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
-              <h3 className="font-[Tenor_Sans] text-xl text-[#2C2D2E]">La Amistad</h3>
+              <h3
+                className="font-script text-[#2C2D2E] leading-none"
+                style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}
+              >
+                La Amistad
+              </h3>
               <div className="flex-1">
                 <p className="font-[Tenor_Sans] italic text-sm text-[#2C2D2E]/75 leading-relaxed line-clamp-3">
                   {t.laAmistad.body}
@@ -108,8 +113,13 @@ export default function OurCoffees() {
                 />
               </div>
               <div>
-                <h3 className="font-[Tenor_Sans] text-xl text-[#2C2D2E]">Craft Lab</h3>
-                <p className="font-script text-[#9B1B47] text-lg italic leading-none mt-0.5">
+                <h3
+                  className="font-script text-[#2C2D2E] leading-none"
+                  style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}
+                >
+                  Craft Lab
+                </h3>
+                <p className="font-[Tenor_Sans] italic text-[#9B1B47] text-sm mt-1">
                   {t.craftLab.imageQuote}
                 </p>
               </div>

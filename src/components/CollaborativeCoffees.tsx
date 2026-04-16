@@ -22,8 +22,11 @@ export default function CollaborativeCoffees() {
           <p className="text-[#CB9F5B] text-xs tracking-[0.4em] uppercase font-[Jost] font-medium mb-3">
             Community
           </p>
-          <h2 className="font-[Tenor_Sans] text-[#2C2D2E] text-3xl md:text-5xl">
-            {t.collaborativeSection.heading}
+          <h2
+            className="font-script text-[#2C2D2E] leading-none"
+            style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}
+          >
+            La Amistad
           </h2>
           <div className="flex items-center justify-center mt-5 gap-3">
             <div className="w-16 h-px bg-[#E11D48]/30" />

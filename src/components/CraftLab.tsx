@@ -24,7 +24,7 @@ export default function CraftLab() {
           </p>
           <h2
             className="font-script text-[#2C2D2E] leading-none"
-            style={{ fontSize: 'clamp(3rem, 6vw, 5rem)' }}
+            style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}
           >
             Craft Lab
           </h2>

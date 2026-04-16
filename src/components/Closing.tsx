@@ -33,13 +33,6 @@ export default function Closing() {
         {/* 3. Divider */}
         <div className="w-24 h-px bg-[#CB9F5B] mx-auto my-10" />
 
-        {/* 4. QR placeholder */}
-        <div className="w-[180px] h-[180px] border-2 border-dashed border-[#CB9F5B]/60 flex items-center justify-center mx-auto my-10">
-          <span className="font-[Jost] uppercase tracking-[0.25em] text-[#CB9F5B]/70 text-xs">
-            {t.closing.qrPlaceholder}
-          </span>
-        </div>
-
         {/* 5. Punchlines */}
         <p className="font-[Tenor_Sans] font-medium text-[#9B1B47] text-xl mb-2">
           {t.closing.punchline1}
