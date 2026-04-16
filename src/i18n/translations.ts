@@ -42,6 +42,17 @@ export const translations = {
       message: 'Message',
       selectInterest: 'Select a line...',
       interestOptions: ['Connect', 'Pulse', 'Beat', 'La Amistad', 'Craft Lab'],
+      narrative: `You've always been at the heart of this journey.
+And this new era begins with you.
+
+We've walked a long road together — across harvests, experiments, and coffees shared with intention.
+And after everything we've built, we've chosen to begin again.
+
+Not from the outside.
+From within.
+
+From the Heart is our new chapter, a return to what truly defines us:
+craft, relationships, and a deeper connection to origin.`,
     },
     fromTheHeart: {
       eyebrow: 'A NEW CHAPTER',
@@ -164,6 +175,17 @@ export const translations = {
       message: 'Mensaje',
       selectInterest: 'Selecciona una línea...',
       interestOptions: ['Connect', 'Pulse', 'Beat', 'La Amistad', 'Craft Lab'],
+      narrative: `Siempre has estado en el corazón de este camino.
+Y esta nueva era comienza contigo.
+
+Hemos recorrido un largo camino juntos — a través de cosechas, experimentos y cafés compartidos con intención.
+Y después de todo lo que hemos construido, hemos decidido volver a empezar.
+
+No desde afuera.
+Desde adentro.
+
+From the Heart es nuestro nuevo capítulo, un regreso a lo que verdaderamente nos define:
+oficio, relaciones y una conexión más profunda con el origen.`,
     },
     fromTheHeart: {
       eyebrow: 'UN NUEVO CAPÍTULO',

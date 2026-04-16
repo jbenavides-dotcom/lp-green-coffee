@@ -14,7 +14,7 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { href: '#narrative-lines', label: lang === 'en' ? 'Our Lines' : 'Nuestras Líneas' },
+    { href: '#lines', label: lang === 'en' ? 'Our Lines' : 'Nuestras Líneas' },
     { href: '#community-lab', label: lang === 'en' ? 'Collaborative' : 'Colaborativo' },
     { href: '#community-lab', label: 'Craft Lab' },
     { href: '#hero2', label: lang === 'en' ? 'Contact' : 'Contacto' },

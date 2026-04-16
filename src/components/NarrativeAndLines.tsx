@@ -1,3 +1,4 @@
+// @deprecated — absorbido en Hero2Col + Lines 2026-04-17
 import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
 import CoffeeCard from './CoffeeCard';

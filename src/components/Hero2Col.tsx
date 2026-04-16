@@ -3,7 +3,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
 
 export default function Hero2Col() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const { ref, visible } = useScrollFade<HTMLElement>();
   const [submitted, setSubmitted] = useState(false);
 
@@ -27,49 +27,91 @@ export default function Hero2Col() {
   const labelClass =
     'block font-[Jost] text-[10px] tracking-[0.25em] uppercase text-[#2C2D2E]/55 mb-2';
 
-  const leadLines = t.hero2.lead.split('\n');
+  const statsLabels =
+    lang === 'en'
+      ? { founded: 'Founded', altitude: 'Altitude', families: 'Farming families' }
+      : { founded: 'Fundados', altitude: 'Altitud', families: 'Familias' };
 
   return (
     <section
       id="hero2"
       ref={ref}
-      className={`min-h-screen px-6 py-20 md:py-24 flex items-center transition-all duration-1000 ${
+      className={`py-20 md:py-28 px-6 transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{ background: 'linear-gradient(180deg, #FCF7EC 0%, #FCF7EC 60%, #FFFFFF 100%)' }}
     >
-      <div className="max-w-6xl mx-auto w-full grid md:grid-cols-12 items-start gap-10 md:gap-12">
+      <div className="max-w-6xl mx-auto w-full grid md:grid-cols-12 items-start gap-12 md:gap-16">
         {/* Left column */}
-        <div className="md:col-span-5 md:pt-6">
+        <div className="md:col-span-6 space-y-6 md:pt-4">
           {/* Kicker */}
-          <p className="font-[Jost] uppercase tracking-[0.25em] text-[#2D5A3D] text-xs mb-6">
-            {t.hero2.kicker}
+          <p className="font-[Jost] uppercase tracking-[0.3em] text-[10px] md:text-xs text-[#2D5A3D]">
+            AN EARLY INVITATION
           </p>
 
           {/* Title */}
           <h1
-            className="font-script text-[#CB9F5B] leading-none mb-8"
-            style={{ fontSize: 'clamp(3rem, 6.5vw, 5rem)' }}
+            className="font-script text-[#9B1B47] leading-[0.9]"
+            style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
           >
-            {t.hero2.title}
+            From the Heart.
           </h1>
 
-          {/* Lead */}
-          <p
-            className="font-[Tenor_Sans] text-[#2C2D2E] leading-relaxed"
-            style={{ fontSize: 'clamp(1.15rem, 1.6vw, 1.5rem)' }}
+          {/* Narrative paragraphs */}
+          <div
+            lang={lang}
+            className="space-y-5 font-[Tenor_Sans] text-[#2C2D2E]/85 text-[15px] md:text-base leading-relaxed text-justify hyphens-auto"
+            style={{ textJustify: 'inter-word' }}
           >
-            {leadLines.map((line, i) => (
-              <span key={i} className="block">
-                {line}
-                {i < leadLines.length - 1 && <br />}
-              </span>
-            ))}
-          </p>
+            {t.hero2.narrative.split('\n\n').map((block, i) => {
+              const lines = block.split('\n');
+              return (
+                <p key={i} className="text-justify">
+                  {lines.map((line, j) => (
+                    <span key={j}>
+                      {line}
+                      {j < lines.length - 1 && <br />}
+                    </span>
+                  ))}
+                </p>
+              );
+            })}
+          </div>
+
+          {/* Divider */}
+          <div className="w-16 h-px bg-[#CB9F5B]" />
+
+          {/* Stats trio */}
+          <div className="flex flex-wrap gap-x-8 gap-y-3">
+            <div>
+              <p className="font-[Tenor_Sans] text-[#9B1B47] text-2xl leading-none">
+                {t.fromTheHeart.stats.founded}
+              </p>
+              <p className="font-[Jost] text-[9px] tracking-[0.2em] uppercase text-[#2C2D2E]/55 mt-1">
+                {statsLabels.founded}
+              </p>
+            </div>
+            <div>
+              <p className="font-[Tenor_Sans] text-[#9B1B47] text-2xl leading-none">
+                1,800m
+              </p>
+              <p className="font-[Jost] text-[9px] tracking-[0.2em] uppercase text-[#2C2D2E]/55 mt-1">
+                {statsLabels.altitude}
+              </p>
+            </div>
+            <div>
+              <p className="font-[Tenor_Sans] text-[#9B1B47] text-2xl leading-none">
+                100
+              </p>
+              <p className="font-[Jost] text-[9px] tracking-[0.2em] uppercase text-[#2C2D2E]/55 mt-1">
+                {statsLabels.families}
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* Right column — card */}
-        <div className="md:col-span-7 order-first md:order-none">
+        {/* Right column — form */}
+        <div className="md:col-span-6 order-first md:order-none">
           <div className="bg-white rounded-3xl shadow-md p-7 md:p-8 border border-[#2C2D2E]/5">
             {submitted ? (
               <div className="text-center py-8">

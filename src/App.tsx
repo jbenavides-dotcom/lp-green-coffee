@@ -1,7 +1,7 @@
 import { LanguageProvider } from './i18n/LanguageContext';
 import Header from './components/Header';
 import Hero2Col from './components/Hero2Col';
-import NarrativeAndLines from './components/NarrativeAndLines';
+import Lines from './components/Lines';
 import CommunityAndLab from './components/CommunityAndLab';
 import Closing from './components/Closing';
 import Footer from './components/Footer';
@@ -13,7 +13,7 @@ export default function App() {
         <Header />
         <main>
           <Hero2Col />
-          <NarrativeAndLines />
+          <Lines />
           <CommunityAndLab />
           <Closing />
         </main>

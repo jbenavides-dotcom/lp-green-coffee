@@ -10,6 +10,7 @@ interface CoffeeCardProps {
   tags: readonly string[];
   gradient: string;
   compact?: boolean;
+  mini?: boolean;
 }
 
 export default function CoffeeCard({
@@ -19,10 +20,58 @@ export default function CoffeeCard({
   tags,
   gradient,
   compact = false,
+  mini = false,
 }: CoffeeCardProps) {
   const { ref, visible } = useScrollFade<HTMLDivElement>();
   const { t } = useLanguage();
   const [expanded, setExpanded] = useState(false);
+
+  // mini mode
+  if (mini) {
+    return (
+      <div
+        ref={ref}
+        className={`bg-white rounded-2xl shadow-md overflow-hidden flex flex-col card-hover transition-all duration-1000 ${
+          visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
+        <div className="flex flex-col flex-1 p-4 space-y-1.5">
+          {/* Name */}
+          <h3
+            className="font-script text-[#2C2D2E] text-center leading-none"
+            style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)' }}
+          >
+            {name.charAt(0) + name.slice(1).toLowerCase()}
+          </h3>
+
+          {/* Thin pink separator */}
+          <div className="flex items-center justify-center">
+            <div className="w-10 h-px bg-[#E11D48]/40" />
+          </div>
+
+          {/* Body text */}
+          <p className="font-[Tenor_Sans] text-[#2C2D2E]/70 italic leading-relaxed text-center text-xs line-clamp-1">
+            {body}
+          </p>
+
+          {/* Tags — max 2 */}
+          <div className="flex flex-wrap justify-center mt-auto gap-1.5">
+            {tags.slice(0, 2).map((tag) => (
+              <span
+                key={tag}
+                className="border border-[#E11D48]/40 text-[#E11D48] rounded-full font-[Jost] text-[9px] px-2 py-0.5"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Footer gradient bar — 4px */}
+        <div className="h-1" style={{ background: gradient }} />
+      </div>
+    );
+  }
 
   return (
     <div
