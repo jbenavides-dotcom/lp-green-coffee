@@ -1,3 +1,4 @@
+// @deprecated — reemplazado en release "From the Heart" 2026-04-16
 import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
