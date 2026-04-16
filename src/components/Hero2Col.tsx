@@ -36,7 +36,7 @@ export default function Hero2Col() {
     <section
       id="hero2"
       ref={ref}
-      className={`py-20 md:py-28 px-6 transition-all duration-1000 ${
+      className={`pt-28 pb-16 md:py-28 px-6 transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{ background: 'linear-gradient(180deg, #FCF7EC 0%, #FCF7EC 60%, #FFFFFF 100%)' }}
@@ -104,7 +104,7 @@ export default function Hero2Col() {
 
         {/* Right column — form */}
         <div className="md:col-span-6 order-first md:order-none">
-          <p className="font-[Tenor_Sans] text-[#9B1B47] text-center text-base md:text-lg mb-4 tracking-wide">
+          <p className="font-[Tenor_Sans] text-[#9B1B47] text-center text-lg md:text-xl mb-5 tracking-wide px-2">
             Secure Priority Access to Our Coffees
           </p>
           <div className="bg-white rounded-3xl shadow-md p-7 md:p-8 border border-[#2C2D2E]/5">
