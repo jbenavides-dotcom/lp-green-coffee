@@ -38,7 +38,7 @@ export default function OurCoffees() {
 
         {/* Estate row */}
         <div className="mb-10">
-          <p className="font-[Jost] uppercase tracking-[0.3em] text-[10px] text-[#2D5A3D]/70 mb-4 text-center">
+          <p className="font-[Jost] uppercase tracking-[0.35em] text-sm md:text-base text-[#2D5A3D]/85 mb-6 text-center">
             {t.ourCoffees.estateEyebrow}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -53,7 +53,7 @@ export default function OurCoffees() {
 
         {/* Collab row */}
         <div>
-          <p className="font-[Jost] uppercase tracking-[0.3em] text-[10px] text-[#9B1B47]/70 mb-4 text-center">
+          <p className="font-[Jost] uppercase tracking-[0.35em] text-sm md:text-base text-[#9B1B47]/85 mb-6 text-center">
             {t.ourCoffees.collabEyebrow}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
