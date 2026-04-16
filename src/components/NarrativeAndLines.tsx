@@ -56,18 +56,18 @@ export default function NarrativeAndLines() {
 
         {/* RIGHT — coffee lines */}
         <div className="md:col-span-7">
-          <p className="font-[Jost] uppercase tracking-[0.4em] text-[#CB9F5B] text-xs mb-3">
+          <p className="font-[Jost] uppercase tracking-[0.4em] text-[#CB9F5B] text-[11px] mb-2">
             {t.whatComesNext.eyebrow}
           </p>
-          <h2 className="font-[Tenor_Sans] text-[#2C2D2E] text-2xl md:text-3xl mb-3">
+          <h2 className="font-[Tenor_Sans] text-[#2C2D2E] text-xl md:text-2xl mb-2">
             {t.whatComesNext.heading}
           </h2>
-          <p className="font-[Tenor_Sans] italic text-[#2C2D2E]/70 mb-10">
+          <p className="font-[Tenor_Sans] italic text-[#2C2D2E]/70 text-sm mb-6">
             {t.whatComesNext.sub}
           </p>
 
           {/* 2+1 grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
             <CoffeeCard
               compact
               imageName="connect"
@@ -87,7 +87,7 @@ export default function NarrativeAndLines() {
               gradient={GRADIENTS.pulse}
             />
             <div className="md:col-span-2 flex justify-center">
-              <div className="w-full md:max-w-[50%]">
+              <div className="w-full md:max-w-[48%]">
                 <CoffeeCard
                   compact
                   imageName="beat"
