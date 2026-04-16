@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
 import CoffeeCard from './CoffeeCard';
-import { img, imgCrop } from '../lib/cloudinary';
+// Cloudinary URLs hardcoded inline with full transforms
 
 const GRADIENTS: Record<string, string> = {
   connect: 'linear-gradient(135deg, #E11D48, #9B1B47)',
