@@ -1,8 +1,7 @@
 import { LanguageProvider } from './i18n/LanguageContext';
 import Header from './components/Header';
 import Hero2Col from './components/Hero2Col';
-import Lines from './components/Lines';
-import CommunityAndLab from './components/CommunityAndLab';
+import OurCoffees from './components/OurCoffees';
 import Closing from './components/Closing';
 import Footer from './components/Footer';
 
@@ -13,8 +12,7 @@ export default function App() {
         <Header />
         <main>
           <Hero2Col />
-          <Lines />
-          <CommunityAndLab />
+          <OurCoffees />
           <Closing />
           {/* Transition band cream → dark before Footer */}
           <div

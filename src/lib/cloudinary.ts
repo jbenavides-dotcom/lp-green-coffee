@@ -22,3 +22,7 @@ export const imgPad = (name: string, width = 1200, ar = '16:10', bg = 'FCF7EC'):
 // Fill crop with center gravity at custom aspect ratio
 export const imgCrop = (name: string, width = 1200, ar = '16:10'): string =>
   `https://res.cloudinary.com/${CLOUD}/image/upload/f_auto,q_auto,w_${width},c_fill,g_center,ar_${ar},e_improve/${FOLDER}/${name}`;
+
+// Fill crop with automatic gravity (AI-detected focal point)
+export const imgFillAuto = (name: string, width = 1200, ar = '16:10'): string =>
+  `https://res.cloudinary.com/${CLOUD}/image/upload/f_auto,q_auto,w_${width},c_fill,g_auto,ar_${ar},e_improve/${FOLDER}/${name}`;
