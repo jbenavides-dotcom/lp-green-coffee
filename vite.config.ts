@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: '/lp-green-coffee/',
+  base: process.env.VITE_BASE_PATH ?? '/lp-green-coffee/',
   plugins: [
     react(),
     tailwindcss(),
