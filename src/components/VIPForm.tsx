@@ -93,21 +93,21 @@ export default function VIPForm() {
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >
-      <div className="max-w-6xl mx-auto w-full grid md:grid-cols-12 items-start gap-12 md:gap-16">
+      <div className="max-w-6xl mx-auto w-full grid md:grid-cols-12 items-center gap-10 md:gap-14">
         {/* Left column — heading */}
-        <div className="md:col-span-5 md:pt-4 md:sticky md:top-32">
-          <span className="inline-block border border-[#b61667] text-[#b61667] uppercase tracking-[0.2em] font-[Apercu] text-[10px] md:text-xs rounded-full px-6 py-1.5 mb-7">
+        <div className="md:col-span-5">
+          <span className="inline-block border border-[#b61667] text-[#b61667] uppercase tracking-[0.2em] font-[Apercu] text-[10px] md:text-xs rounded-full px-5 py-1.5 mb-5">
             {t.vipForm.pill}
           </span>
           <h2
             className="font-[PP_Hatton] text-[#2C2D2E] leading-[1.05]"
-            style={{ fontSize: 'clamp(2rem, 4.5vw, 3.25rem)' }}
+            style={{ fontSize: 'clamp(1.8rem, 3.8vw, 2.75rem)' }}
           >
             {t.vipForm.title}
           </h2>
-          <div className="w-16 h-px bg-[#CB9F5B] mt-6 mb-6" />
+          <div className="w-12 h-px bg-[#CB9F5B] mt-5 mb-5" />
           <p
-            className="font-[Apercu] text-[#2C2D2E]/80 text-base md:text-lg leading-relaxed"
+            className="font-[Apercu] text-[#2C2D2E]/80 text-sm md:text-base leading-relaxed"
             style={{ fontWeight: 300 }}
           >
             {t.vipForm.lead}
@@ -115,7 +115,7 @@ export default function VIPForm() {
         </div>
 
         {/* Right column — form */}
-        <div className="md:col-span-7 bg-white rounded-3xl shadow-md p-7 md:p-8 border border-[#2C2D2E]/5">
+        <div className="md:col-span-7 bg-white rounded-3xl shadow-md p-6 md:p-7 border border-[#2C2D2E]/5">
           {state === 'ok' ? (
             <div className="text-center py-10">
               <p
@@ -133,8 +133,8 @@ export default function VIPForm() {
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className={labelClass}>{t.vipForm.n_name}</label>
                   <input {...register('name')} className={inputClass} autoComplete="name" />
@@ -162,13 +162,13 @@ export default function VIPForm() {
               </div>
 
               <div>
-                <div className="flex items-baseline justify-between mb-3">
+                <div className="flex items-baseline justify-between mb-2">
                   <label className={labelClass + ' mb-0'}>{t.vipForm.n_calling}</label>
                   <span className="font-[Apercu] text-[10px] italic text-[#2C2D2E]/50">
                     {t.vipForm.n_callingHint}
                   </span>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-1.5">
                   {t.vipForm.coffeeOptions.map((opt) => (
                     <label
                       key={opt}
@@ -206,23 +206,15 @@ export default function VIPForm() {
                 <label className={labelClass}>{t.vipForm.n_message}</label>
                 <textarea
                   {...register('message')}
-                  rows={2}
+                  rows={1}
                   className={`${inputClass} resize-none`}
                 />
               </div>
 
-              <div className="pt-4 border-t border-[#2C2D2E]/10 space-y-4">
-                <div className="space-y-1">
-                  <p className="font-[Apercu] text-[11px] text-[#2C2D2E]/55">
-                    {t.vipForm.micro1}
-                  </p>
-                  <p className="font-[Apercu] text-[11px] text-[#2C2D2E]/55">
-                    {t.vipForm.micro2}
-                  </p>
-                  <p className="font-[Apercu] text-[11px] text-[#2C2D2E]/55">
-                    {t.vipForm.micro3}
-                  </p>
-                </div>
+              <div className="pt-3 border-t border-[#2C2D2E]/10 space-y-3">
+                <p className="font-[Apercu] text-[11px] text-[#2C2D2E]/55 leading-snug">
+                  {t.vipForm.micro1} · {t.vipForm.micro2} · {t.vipForm.micro3}
+                </p>
                 {state === 'error' && (
                   <p className="font-[Apercu] text-[11px] text-[#ef5aa0]">
                     {errorMsg ?? 'Something went wrong. Please try again.'}
@@ -231,7 +223,7 @@ export default function VIPForm() {
                 <button
                   type="submit"
                   disabled={state === 'submitting'}
-                  className="inline-flex items-center gap-2 bg-[#b61667] hover:bg-[#ef5aa0] disabled:opacity-60 disabled:cursor-not-allowed text-white font-[Apercu] font-medium text-xs tracking-[0.2em] uppercase rounded-full px-8 py-3.5 transition-all duration-200 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center gap-2 bg-[#b61667] hover:bg-[#ef5aa0] disabled:opacity-60 disabled:cursor-not-allowed text-white font-[Apercu] font-medium text-xs tracking-[0.2em] uppercase rounded-full px-7 py-3 transition-all duration-200 shadow-md hover:shadow-lg"
                 >
                   {state === 'submitting' ? '···' : t.vipForm.cta}
                   <span className="text-base leading-none">→</span>
