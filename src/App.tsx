@@ -1,6 +1,5 @@
 import { LanguageProvider } from './i18n/LanguageContext';
 import TopBar from './components/TopBar';
-import Header from './components/Header';
 import HeroYouInspire from './components/HeroYouInspire';
 import HeartOfJourney from './components/HeartOfJourney';
 import MoreHumanBand from './components/MoreHumanBand';
@@ -13,7 +12,6 @@ export default function App() {
     <LanguageProvider>
       <div className="min-h-screen">
         <TopBar />
-        <Header />
         <main>
           <HeroYouInspire />
           <HeartOfJourney />

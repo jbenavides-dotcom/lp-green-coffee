@@ -78,161 +78,162 @@ export default function VIPForm() {
   };
 
   const inputClass =
-    'w-full border-0 border-b border-[#2C2D2E]/20 bg-transparent py-3 px-1 font-[Apercu] text-[#2C2D2E] text-sm focus:outline-none focus:border-[#b61667] transition-colors placeholder:text-[#2C2D2E]/30';
+    'w-full bg-white text-[#2C2D2E] font-[Apercu] text-sm py-3 px-4 rounded-sm focus:outline-none focus:ring-2 focus:ring-white/50 transition';
 
   const labelClass =
-    'block font-[Apercu] text-[10px] tracking-[0.25em] uppercase text-[#2C2D2E]/55 mb-2';
+    'block font-[Apercu] text-[10px] tracking-[0.25em] uppercase text-white/95 mb-2';
 
-  const errorClass = 'mt-1 font-[Apercu] text-[10px] text-[#ef5aa0]';
+  const errorClass = 'mt-1 font-[Apercu] text-[10px] text-white/90';
 
   return (
     <section
       id="vip-form"
       ref={ref}
-      className={`bg-white px-6 py-20 md:py-24 transition-all duration-1000 ${
+      className={`bg-[#b61667] text-white transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >
-      <div className="max-w-6xl mx-auto w-full grid md:grid-cols-12 items-center gap-10 md:gap-14">
-        {/* Left column — heading */}
-        <div className="md:col-span-5">
-          <span className="inline-block border border-[#b61667] text-[#b61667] uppercase tracking-[0.2em] font-[Apercu] text-[10px] md:text-xs rounded-full px-5 py-1.5 mb-5">
+      <div className="max-w-3xl mx-auto px-6 py-20 md:py-24">
+        {/* Header centered */}
+        <div className="text-center mb-12">
+          <span className="inline-block border border-white/80 text-white uppercase tracking-[0.25em] font-[Apercu] text-[10px] md:text-xs rounded-full px-7 py-2 mb-8">
             {t.vipForm.pill}
           </span>
           <h2
-            className="font-[PP_Hatton] text-[#2C2D2E] leading-[1.05]"
-            style={{ fontSize: 'clamp(1.8rem, 3.8vw, 2.75rem)' }}
+            className="font-[PP_Hatton] text-white leading-[1.1]"
+            style={{ fontSize: 'clamp(2rem, 4.5vw, 3.25rem)' }}
           >
             {t.vipForm.title}
           </h2>
-          <div className="w-12 h-px bg-[#CB9F5B] mt-5 mb-5" />
           <p
-            className="font-[Apercu] text-[#2C2D2E]/80 text-sm md:text-base leading-relaxed"
+            className="font-[Apercu] text-white/85 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mt-6"
             style={{ fontWeight: 300 }}
           >
             {t.vipForm.lead}
           </p>
         </div>
 
-        {/* Right column — form */}
-        <div className="md:col-span-7 bg-white rounded-3xl shadow-md p-6 md:p-7 border border-[#2C2D2E]/5">
-          {state === 'ok' ? (
-            <div className="text-center py-10">
-              <p
-                className="font-[PP_Hatton] italic text-[#b61667] leading-none mb-6"
-                style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}
-              >
-                {t.vipForm.thanks}
-              </p>
-              <div className="w-16 h-px bg-[#CB9F5B] mx-auto mb-6" aria-hidden />
-              <p
-                className="font-[Apercu] italic text-[#2C2D2E]/70"
-                style={{ fontWeight: 300 }}
-              >
-                {t.vipForm.thanksNote}
-              </p>
+        {state === 'ok' ? (
+          <div className="text-center py-10">
+            <p
+              className="font-[PP_Hatton] italic text-white leading-none mb-6"
+              style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}
+            >
+              {t.vipForm.thanks}
+            </p>
+            <div className="w-16 h-px bg-white/60 mx-auto mb-6" aria-hidden />
+            <p
+              className="font-[Apercu] italic text-white/85"
+              style={{ fontWeight: 300 }}
+            >
+              {t.vipForm.thanksNote}
+            </p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+            <div>
+              <label className={labelClass}>{t.vipForm.n_name}</label>
+              <input {...register('name')} className={inputClass} autoComplete="name" />
+              {errors.name && <p className={errorClass}>{t.vipForm.n_name} *</p>}
             </div>
-          ) : (
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className={labelClass}>{t.vipForm.n_name}</label>
-                  <input {...register('name')} className={inputClass} autoComplete="name" />
-                  {errors.name && <p className={errorClass}>{t.vipForm.n_name} *</p>}
-                </div>
-                <div>
-                  <label className={labelClass}>{t.vipForm.n_company}</label>
-                  <input
-                    {...register('company')}
-                    className={inputClass}
-                    autoComplete="organization"
-                  />
-                </div>
-              </div>
 
-              <div>
-                <label className={labelClass}>{t.vipForm.n_email}</label>
-                <input
-                  {...register('email')}
-                  type="email"
-                  className={inputClass}
-                  autoComplete="email"
-                />
-                {errors.email && <p className={errorClass}>{t.vipForm.n_email} *</p>}
-              </div>
+            <div>
+              <label className={labelClass}>{t.vipForm.n_company}</label>
+              <input
+                {...register('company')}
+                className={inputClass}
+                autoComplete="organization"
+              />
+            </div>
 
-              <div>
-                <div className="flex items-baseline justify-between mb-2">
-                  <label className={labelClass + ' mb-0'}>{t.vipForm.n_calling}</label>
-                  <span className="font-[Apercu] text-[10px] italic text-[#2C2D2E]/50">
-                    {t.vipForm.n_callingHint}
-                  </span>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-1.5">
-                  {t.vipForm.coffeeOptions.map((opt) => (
-                    <label
-                      key={opt}
-                      className="flex items-center gap-2 cursor-pointer group select-none"
+            <div>
+              <label className={labelClass}>{t.vipForm.n_email}</label>
+              <input
+                {...register('email')}
+                type="email"
+                className={inputClass}
+                autoComplete="email"
+              />
+              {errors.email && <p className={errorClass}>{t.vipForm.n_email} *</p>}
+            </div>
+
+            <div>
+              <div className="flex items-baseline justify-between mb-2">
+                <label className={labelClass + ' mb-0'}>{t.vipForm.n_calling}</label>
+                <span className="font-[Apercu] text-[10px] italic text-white/70">
+                  {t.vipForm.n_callingHint}
+                </span>
+              </div>
+              <div className="bg-white rounded-sm px-4 py-3 grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2">
+                {t.vipForm.coffeeOptions.map((opt) => (
+                  <label
+                    key={opt}
+                    className="flex items-center gap-2 cursor-pointer group select-none"
+                  >
+                    <input
+                      type="checkbox"
+                      value={opt}
+                      {...register('coffees')}
+                      className="peer sr-only"
+                    />
+                    <span
+                      aria-hidden
+                      className="w-4 h-4 rounded-sm border border-[#2C2D2E]/40 flex items-center justify-center peer-checked:bg-[#b61667] peer-checked:border-[#b61667] transition-colors flex-shrink-0"
                     >
-                      <input
-                        type="checkbox"
-                        value={opt}
-                        {...register('coffees')}
-                        className="peer sr-only"
-                      />
-                      <span
-                        aria-hidden
-                        className="w-4 h-4 rounded-sm border border-[#2C2D2E]/30 flex items-center justify-center peer-checked:bg-[#b61667] peer-checked:border-[#b61667] transition-colors"
+                      <svg
+                        viewBox="0 0 12 12"
+                        className="w-3 h-3 text-white opacity-0 peer-checked:opacity-100"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
                       >
-                        <svg
-                          viewBox="0 0 12 12"
-                          className="w-3 h-3 text-white opacity-0 peer-checked:opacity-100"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        >
-                          <path d="M2 6l3 3 5-6" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </span>
-                      <span className="font-[Apercu] text-sm text-[#2C2D2E]/85 group-hover:text-[#b61667] transition-colors">
-                        {opt}
-                      </span>
-                    </label>
-                  ))}
-                </div>
+                        <path d="M2 6l3 3 5-6" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                    <span className="font-[Apercu] text-sm text-[#2C2D2E]/85 group-hover:text-[#b61667] transition-colors">
+                      {opt}
+                    </span>
+                  </label>
+                ))}
               </div>
+            </div>
 
-              <div>
-                <label className={labelClass}>{t.vipForm.n_message}</label>
-                <textarea
-                  {...register('message')}
-                  rows={1}
-                  className={`${inputClass} resize-none`}
-                />
-              </div>
+            <div>
+              <label className={labelClass}>{t.vipForm.n_message}</label>
+              <textarea
+                {...register('message')}
+                rows={3}
+                className={`${inputClass} resize-none`}
+              />
+            </div>
 
-              <div className="pt-3 border-t border-[#2C2D2E]/10 space-y-3">
-                <p className="font-[Apercu] text-[11px] text-[#2C2D2E]/55 leading-snug">
-                  {t.vipForm.micro1} · {t.vipForm.micro2} · {t.vipForm.micro3}
-                </p>
-                {state === 'error' && (
-                  <p className="font-[Apercu] text-[11px] text-[#ef5aa0]">
-                    {errorMsg ?? 'Something went wrong. Please try again.'}
-                  </p>
-                )}
-                <button
-                  type="submit"
-                  disabled={state === 'submitting'}
-                  className="inline-flex items-center gap-2 bg-[#b61667] hover:bg-[#ef5aa0] disabled:opacity-60 disabled:cursor-not-allowed text-white font-[Apercu] font-medium text-xs tracking-[0.2em] uppercase rounded-full px-7 py-3 transition-all duration-200 shadow-md hover:shadow-lg"
-                >
-                  {state === 'submitting' ? '···' : t.vipForm.cta}
-                  <span className="text-base leading-none">→</span>
-                </button>
-              </div>
-            </form>
-          )}
-        </div>
+            {state === 'error' && (
+              <p className="font-[Apercu] text-[11px] text-white/90 text-center">
+                {errorMsg ?? 'Something went wrong. Please try again.'}
+              </p>
+            )}
+
+            <div className="pt-4">
+              <button
+                type="submit"
+                disabled={state === 'submitting'}
+                className="w-full bg-[#ef5aa0] hover:bg-white hover:text-[#b61667] disabled:opacity-60 disabled:cursor-not-allowed text-white font-[Apercu] font-medium text-xs md:text-sm tracking-[0.3em] uppercase py-4 transition-all duration-200"
+              >
+                {state === 'submitting' ? '···' : t.vipForm.cta}
+              </button>
+            </div>
+
+            <div className="text-center space-y-1 pt-6">
+              <p className="font-[Apercu] text-[11px] text-white/80">{t.vipForm.micro1}</p>
+              <p className="font-[Apercu] text-[11px] text-white/80">{t.vipForm.micro2}</p>
+              <p className="font-[Apercu] text-[11px] text-white/80">{t.vipForm.micro3}</p>
+            </div>
+          </form>
+        )}
       </div>
+
+      {/* decorative pink stripe at bottom */}
+      <div className="h-6 md:h-8 bg-[#ef5aa0]" aria-hidden />
     </section>
   );
 }

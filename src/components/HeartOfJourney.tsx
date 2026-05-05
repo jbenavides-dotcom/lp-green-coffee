@@ -9,16 +9,11 @@ export default function HeartOfJourney() {
     <section
       id="heart"
       ref={ref}
-      className={`bg-white px-6 py-20 md:py-28 transition-all duration-1000 ${
+      className={`bg-[#FCF7EC] px-6 py-20 md:py-28 transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >
       <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
-        {/* Pill */}
-        <span className="inline-block border border-[#b61667] text-[#b61667] uppercase tracking-[0.2em] font-[Apercu] text-[10px] md:text-xs rounded-full px-6 py-1.5 mb-8">
-          {t.heartJourney.pill}
-        </span>
-
         {/* Eyebrow */}
         <p className="font-[Apercu] uppercase tracking-[0.2em] text-[11px] md:text-xs text-[#b61667] mb-8">
           {t.heartJourney.eyebrow}

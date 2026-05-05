@@ -46,7 +46,7 @@ export default function OurCoffees() {
     <section
       id="coffees"
       ref={ref}
-      className={`bg-white transition-all duration-1000 ${
+      className={`bg-[#FCF7EC] transition-all duration-1000 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >
