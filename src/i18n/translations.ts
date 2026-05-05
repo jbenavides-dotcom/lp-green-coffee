@@ -59,6 +59,7 @@ export const translations = {
       n_company: 'COMPANY / ROASTERY',
       n_email: 'EMAIL ADDRESS',
       n_calling: 'WHICH COFFEES ARE CALLING TO YOU?',
+      n_callingHint: 'Select all that apply',
       n_message: "ANYTHING YOU'D LIKE US TO KNOW?",
       cta: 'RESERVE MY PRIORITY ACCESS',
       submitting: '···',
@@ -67,6 +68,7 @@ export const translations = {
       micro1: 'This is a private, VIP-only invitation.',
       micro2: 'Our team will reach out personally within 48 hours.',
       micro3: 'Early Access is available until June 1st.',
+      coffeeOptions: ['Connect', 'Beat', 'Pulse', 'La Amistad', 'Craft Lab'],
     },
     footerVip: {
       quote:
@@ -268,6 +270,7 @@ craft, relationships, and a deeper connection to origin.`,
       n_company: 'EMPRESA / TOSTADURÍA',
       n_email: 'CORREO ELECTRÓNICO',
       n_calling: '¿QUÉ CAFÉS TE ESTÁN LLAMANDO?',
+      n_callingHint: 'Selecciona los que apliquen',
       n_message: '¿ALGO QUE TE GUSTARÍA QUE SUPIÉRAMOS?',
       cta: 'RESERVAR MI ACCESO PRIORITARIO',
       submitting: '···',
@@ -276,6 +279,7 @@ craft, relationships, and a deeper connection to origin.`,
       micro1: 'Esta es una invitación privada, solo para VIP.',
       micro2: 'Nuestro equipo se pondrá en contacto personalmente en 48 horas.',
       micro3: 'El acceso anticipado está disponible hasta el 1 de junio.',
+      coffeeOptions: ['Connect', 'Beat', 'Pulse', 'La Amistad', 'Craft Lab'],
     },
     footerVip: {
       quote:

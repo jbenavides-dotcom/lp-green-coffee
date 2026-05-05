@@ -127,24 +127,24 @@ export default function OurCoffees() {
       {/* Craft Lab band */}
       <Band>{t.whatComesNextVip.craftLabBand}</Band>
 
-      {/* Craft Lab block — same visual scale as La Amistad */}
-      <div className="max-w-3xl mx-auto px-6 py-14 md:py-16 text-center">
-        <div className="flex items-center justify-center h-32">
+      {/* Craft Lab block — slightly smaller than La Amistad */}
+      <div className="max-w-3xl mx-auto px-6 py-10 md:py-12 text-center">
+        <div className="flex items-center justify-center h-20 md:h-24">
           <p
             className="font-script text-[#b61667] leading-[0.95]"
-            style={{ fontSize: 'clamp(4.5rem, 10vw, 8.5rem)' }}
+            style={{ fontSize: 'clamp(3rem, 6vw, 5rem)' }}
           >
             Craft Lab
           </p>
         </div>
         <p
-          className="font-[Apercu] uppercase tracking-[0.25em] text-[11px] md:text-xs mt-6 text-[#b61667]"
+          className="font-[Apercu] uppercase tracking-[0.25em] text-[11px] md:text-xs mt-4 text-[#b61667]"
           style={{ fontWeight: 300 }}
         >
           {t.craftLab.imageQuote}
         </p>
         <p
-          className="font-[Apercu] text-[#2C2D2E]/85 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mt-6"
+          className="font-[Apercu] text-[#2C2D2E]/85 text-sm md:text-[15px] leading-relaxed max-w-xl mx-auto mt-4"
           style={{ fontWeight: 300 }}
         >
           {t.craftLab.body}

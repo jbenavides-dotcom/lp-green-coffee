@@ -10,7 +10,7 @@ const leadSchema = z.object({
   name: z.string().min(2, 'required').max(120),
   company: z.string().max(200).optional().or(z.literal('')),
   email: z.string().email('invalid'),
-  interest: z.string().max(200).optional().or(z.literal('')),
+  coffees: z.array(z.string()).optional(),
   message: z.string().max(2000).optional().or(z.literal('')),
 });
 
@@ -64,7 +64,7 @@ export default function VIPForm() {
         email: values.email.trim().toLowerCase(),
         company: values.company?.trim() || null,
         country: null,
-        interest: values.interest?.trim() || null,
+        interest: values.coffees?.length ? values.coffees.join(', ') : null,
         message: values.message?.trim() || null,
         lang,
         ...meta,
@@ -93,27 +93,29 @@ export default function VIPForm() {
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >
-      <div className="max-w-2xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
+      <div className="max-w-6xl mx-auto w-full grid md:grid-cols-12 items-start gap-12 md:gap-16">
+        {/* Left column — heading */}
+        <div className="md:col-span-5 md:pt-4 md:sticky md:top-32">
           <span className="inline-block border border-[#b61667] text-[#b61667] uppercase tracking-[0.2em] font-[Apercu] text-[10px] md:text-xs rounded-full px-6 py-1.5 mb-7">
             {t.vipForm.pill}
           </span>
           <h2
-            className="font-[PP_Hatton] text-[#2C2D2E] leading-[1.1]"
-            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
+            className="font-[PP_Hatton] text-[#2C2D2E] leading-[1.05]"
+            style={{ fontSize: 'clamp(2rem, 4.5vw, 3.25rem)' }}
           >
             {t.vipForm.title}
           </h2>
+          <div className="w-16 h-px bg-[#CB9F5B] mt-6 mb-6" />
           <p
-            className="font-[Apercu] text-[#2C2D2E]/80 text-base md:text-lg leading-relaxed max-w-xl mx-auto mt-6"
+            className="font-[Apercu] text-[#2C2D2E]/80 text-base md:text-lg leading-relaxed"
             style={{ fontWeight: 300 }}
           >
             {t.vipForm.lead}
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-md p-7 md:p-8 border border-[#2C2D2E]/5">
+        {/* Right column — form */}
+        <div className="md:col-span-7 bg-white rounded-3xl shadow-md p-7 md:p-8 border border-[#2C2D2E]/5">
           {state === 'ok' ? (
             <div className="text-center py-10">
               <p
@@ -160,8 +162,44 @@ export default function VIPForm() {
               </div>
 
               <div>
-                <label className={labelClass}>{t.vipForm.n_calling}</label>
-                <input {...register('interest')} className={inputClass} />
+                <div className="flex items-baseline justify-between mb-3">
+                  <label className={labelClass + ' mb-0'}>{t.vipForm.n_calling}</label>
+                  <span className="font-[Apercu] text-[10px] italic text-[#2C2D2E]/50">
+                    {t.vipForm.n_callingHint}
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                  {t.vipForm.coffeeOptions.map((opt) => (
+                    <label
+                      key={opt}
+                      className="flex items-center gap-2 cursor-pointer group select-none"
+                    >
+                      <input
+                        type="checkbox"
+                        value={opt}
+                        {...register('coffees')}
+                        className="peer sr-only"
+                      />
+                      <span
+                        aria-hidden
+                        className="w-4 h-4 rounded-sm border border-[#2C2D2E]/30 flex items-center justify-center peer-checked:bg-[#b61667] peer-checked:border-[#b61667] transition-colors"
+                      >
+                        <svg
+                          viewBox="0 0 12 12"
+                          className="w-3 h-3 text-white opacity-0 peer-checked:opacity-100"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <path d="M2 6l3 3 5-6" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                      <span className="font-[Apercu] text-sm text-[#2C2D2E]/85 group-hover:text-[#b61667] transition-colors">
+                        {opt}
+                      </span>
+                    </label>
+                  ))}
+                </div>
               </div>
 
               <div>
