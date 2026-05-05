@@ -1,14 +1,42 @@
 import { useLanguage } from '../i18n/LanguageContext';
 import { useScrollFade } from './useScrollFade';
-import CoffeeCard from './CoffeeCard';
 
-const GRADIENTS: Record<string, string> = {
-  connect: 'linear-gradient(135deg, #E11D48, #9B1B47)',
-  pulse: 'linear-gradient(135deg, #9B1B47, #E11D48)',
-  beat: 'linear-gradient(135deg, #E11D48, #CB9F5B)',
-  laAmistad: 'linear-gradient(135deg, #9B1B47, #CB9F5B)',
-  craftLab: 'linear-gradient(135deg, #CB9F5B, #E11D48)',
-};
+interface BandProps {
+  children: React.ReactNode;
+}
+
+function Band({ children }: BandProps) {
+  return (
+    <div className="bg-[#b61667] text-white py-3 md:py-3.5">
+      <p className="text-center font-[Apercu] uppercase tracking-[0.3em] text-[11px] md:text-xs text-white/95">
+        {children}
+      </p>
+    </div>
+  );
+}
+
+interface EstateItemProps {
+  svg: string;
+  alt: string;
+  caption: string;
+  color: string;
+}
+
+function EstateItem({ svg, alt, caption, color }: EstateItemProps) {
+  return (
+    <div className="flex flex-col items-center text-center px-4">
+      <div className="h-24 md:h-28 flex items-center justify-center w-full">
+        <img src={svg} alt={alt} className="max-h-full w-auto object-contain" />
+      </div>
+      <p
+        className="font-[Apercu] text-sm md:text-[15px] mt-5 leading-relaxed max-w-[260px]"
+        style={{ color, fontWeight: 300 }}
+      >
+        {caption}
+      </p>
+    </div>
+  );
+}
 
 export default function OurCoffees() {
   const { t } = useLanguage();
@@ -18,65 +46,109 @@ export default function OurCoffees() {
     <section
       id="coffees"
       ref={ref}
-      className={`bg-white py-16 md:py-20 px-6 transition-all duration-1000 ${
-        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      className={`bg-white transition-all duration-1000 ${
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-14">
-          <p className="font-[Jost] uppercase tracking-[0.35em] text-[11px] text-[#CB9F5B] mb-2">
-            {t.ourCoffees.eyebrow}
-          </p>
-          <h2 className="font-[Tenor_Sans] text-2xl md:text-3xl text-[#2C2D2E]">
-            {t.ourCoffees.heading}
-          </h2>
-          <p className="font-[Tenor_Sans] italic text-base md:text-lg text-[#2C2D2E]/80 mt-4 max-w-xl mx-auto">
-            {t.ourCoffees.sub}
-          </p>
+      {/* Header (centered) */}
+      <div className="max-w-4xl mx-auto px-6 pt-20 md:pt-24 pb-12 md:pb-16 text-center">
+        <p className="font-[Apercu] uppercase tracking-[0.3em] text-[11px] md:text-xs text-[#b61667] mb-5">
+          {t.whatComesNextVip.eyebrow}
+        </p>
+        <h2
+          className="font-[PP_Hatton] italic text-[#b61667] leading-[1.05]"
+          style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
+        >
+          {t.whatComesNextVip.title}
+        </h2>
+      </div>
+
+      {/* Estate band */}
+      <Band>{t.whatComesNextVip.estateBand}</Band>
+
+      {/* 3 estate columns */}
+      <div className="max-w-6xl mx-auto px-6 py-14 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+          <EstateItem
+            svg="/brand-vip/CONNECT.svg"
+            alt="Connect"
+            caption={t.coffees.connect}
+            color="#9074dd"
+          />
+          <EstateItem
+            svg="/brand-vip/BEAT.svg"
+            alt="Beat"
+            caption={t.coffees.beat}
+            color="#b73283"
+          />
+          <EstateItem
+            svg="/brand-vip/PULSE.svg"
+            alt="Pulse"
+            caption={t.coffees.pulse}
+            color="#fa5753"
+          />
         </div>
 
-        {/* Estate row */}
-        <div className="mb-10">
-          <p className="font-[Jost] uppercase tracking-[0.35em] text-sm md:text-base text-[#2D5A3D]/85 mb-6 text-center">
-            {t.ourCoffees.estateEyebrow}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <CoffeeCard mini imageName="connect" name={t.connect.name} body={t.connect.body}
-              details={t.connect.details} tags={t.connect.tags} gradient={GRADIENTS.connect} />
-            <CoffeeCard mini imageName="pulse" name={t.pulse.name} body={t.pulse.body}
-              details={t.pulse.details} tags={t.pulse.tags} gradient={GRADIENTS.pulse} />
-            <CoffeeCard mini imageName="beat" name={t.beat.name} body={t.beat.body}
-              details={t.beat.details} tags={t.beat.tags} gradient={GRADIENTS.beat} />
-          </div>
-        </div>
+        {/* Estate caption */}
+        <p
+          className="font-[Apercu] italic text-[#2C2D2E]/80 text-sm md:text-base leading-relaxed text-center max-w-xl mx-auto mt-12 md:mt-14"
+          style={{ fontWeight: 300 }}
+        >
+          {t.whatComesNextVip.estateCaption}
+        </p>
+      </div>
 
-        {/* Collab row */}
-        <div>
-          <p className="font-[Jost] uppercase tracking-[0.35em] text-sm md:text-base text-[#9B1B47]/85 mb-6 text-center">
-            {t.ourCoffees.collabEyebrow}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <CoffeeCard
-              mini
-              imageName="la-amistad"
-              name={t.laAmistad.name}
-              body={t.laAmistad.body}
-              details={t.laAmistad.details}
-              tags={t.laAmistad.tags}
-              gradient={GRADIENTS.laAmistad}
-            />
-            <CoffeeCard
-              mini
-              imageName="craft-lab-banner"
-              name={t.craftLab.name}
-              body={t.craftLab.body}
-              details={t.craftLab.details}
-              tags={t.craftLab.tags}
-              gradient={GRADIENTS.craftLab}
-            />
-          </div>
+      {/* Neighbors band */}
+      <Band>{t.whatComesNextVip.neighborsBand}</Band>
+
+      {/* La Amistad block */}
+      <div className="max-w-3xl mx-auto px-6 py-14 md:py-16 text-center">
+        <div className="flex items-center justify-center h-32">
+          <img
+            src="/brand-vip/LA AMISTAD.svg"
+            alt="La Amistad"
+            className="max-h-full w-auto object-contain"
+          />
         </div>
+        <p
+          className="font-[Apercu] uppercase tracking-[0.25em] text-[11px] md:text-xs mt-6"
+          style={{ color: '#c0bc6a', fontWeight: 300 }}
+        >
+          {t.whatComesNextVip.neighborsLabel}
+        </p>
+        <p
+          className="font-[Apercu] text-[#2C2D2E]/85 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mt-6"
+          style={{ fontWeight: 300 }}
+        >
+          {t.whatComesNextVip.neighborsBody}
+        </p>
+      </div>
+
+      {/* Craft Lab band */}
+      <Band>{t.whatComesNextVip.craftLabBand}</Band>
+
+      {/* Craft Lab block — same visual scale as La Amistad */}
+      <div className="max-w-3xl mx-auto px-6 py-14 md:py-16 text-center">
+        <div className="flex items-center justify-center h-32">
+          <p
+            className="font-script text-[#b61667] leading-[0.95]"
+            style={{ fontSize: 'clamp(4.5rem, 10vw, 8.5rem)' }}
+          >
+            Craft Lab
+          </p>
+        </div>
+        <p
+          className="font-[Apercu] uppercase tracking-[0.25em] text-[11px] md:text-xs mt-6 text-[#b61667]"
+          style={{ fontWeight: 300 }}
+        >
+          {t.craftLab.imageQuote}
+        </p>
+        <p
+          className="font-[Apercu] text-[#2C2D2E]/85 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mt-6"
+          style={{ fontWeight: 300 }}
+        >
+          {t.craftLab.body}
+        </p>
       </div>
     </section>
   );

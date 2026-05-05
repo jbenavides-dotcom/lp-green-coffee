@@ -1,12 +1,31 @@
 @import "tailwindcss";
 
+/* === VIP custom fonts === */
+@font-face {
+  font-family: 'PP Hatton';
+  src: url('/fonts/PPHatton-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Apercu';
+  src: url('/fonts/apercu-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-dark: #2C2D2E;
   --color-gold: #CB9F5B;
   --color-light: #FFFFFF;
-  --color-pink: #E11D48;
-  --color-cream: #FFFFFF;
+  --color-pink: #ef5aa0;
+  --color-burdeos: #b61667;
+  --color-cream: #FCF7EC;
   --color-green: #2D5A3D;
+  --color-olive: #7A8B3D;
   --color-hero-bg: #FFFFFF;
 }
 
@@ -18,6 +37,8 @@ body {
   margin: 0;
   background-color: #FFFFFF;
   color: var(--color-dark);
+  font-family: 'Apercu', system-ui, -apple-system, sans-serif;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -26,14 +47,29 @@ body {
   box-sizing: border-box;
 }
 
-/* Great Vibes font utility */
+/* Great Vibes script utility (fallback for legacy components) */
 .font-script {
   font-family: 'Great Vibes', cursive;
 }
 
-/* Tenor Sans display utility */
+/* PP Hatton display utility (replaces former Tenor Sans) */
 .font-display {
-  font-family: 'Tenor Sans', serif;
+  font-family: 'PP Hatton', 'Tenor Sans', serif;
+}
+
+/* Apercu body utility (replaces former Jost) */
+.font-body {
+  font-family: 'Apercu', 'Jost', system-ui, sans-serif;
+  font-weight: 300;
+}
+
+/* Tailwind arbitrary font names with bracket syntax need quoted version too */
+.font-\[PP_Hatton\] {
+  font-family: 'PP Hatton', 'Tenor Sans', serif;
+}
+.font-\[Apercu\] {
+  font-family: 'Apercu', 'Jost', system-ui, sans-serif;
+  font-weight: 300;
 }
 
 /* Remove default select styles */
@@ -53,4 +89,13 @@ select {
 .card-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(44,45,46,0.12);
+}
+
+/* TopBar marquee for very small screens */
+.topbar-scroll::-webkit-scrollbar {
+  display: none;
+}
+.topbar-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }

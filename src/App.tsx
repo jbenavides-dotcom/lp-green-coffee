@@ -1,19 +1,25 @@
 import { LanguageProvider } from './i18n/LanguageContext';
+import TopBar from './components/TopBar';
 import Header from './components/Header';
-import Hero2Col from './components/Hero2Col';
+import HeroYouInspire from './components/HeroYouInspire';
+import HeartOfJourney from './components/HeartOfJourney';
+import MoreHumanBand from './components/MoreHumanBand';
 import OurCoffees from './components/OurCoffees';
-import Closing from './components/Closing';
+import VIPForm from './components/VIPForm';
 import Footer from './components/Footer';
 
 export default function App() {
   return (
     <LanguageProvider>
       <div className="min-h-screen">
+        <TopBar />
         <Header />
         <main>
-          <Hero2Col />
+          <HeroYouInspire />
+          <HeartOfJourney />
+          <MoreHumanBand />
           <OurCoffees />
-          <Closing />
+          <VIPForm />
         </main>
         <Footer />
       </div>
