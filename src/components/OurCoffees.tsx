@@ -129,13 +129,12 @@ export default function OurCoffees() {
 
       {/* Craft Lab block — slightly smaller than La Amistad */}
       <div className="max-w-3xl mx-auto px-6 py-10 md:py-12 text-center">
-        <div className="flex items-center justify-center h-20 md:h-24">
-          <p
-            className="font-script text-[#b61667] leading-[0.95]"
-            style={{ fontSize: 'clamp(3rem, 6vw, 5rem)' }}
-          >
-            Craft Lab
-          </p>
+        <div className="flex items-center justify-center h-16 md:h-20">
+          <img
+            src="/brand-vip/CRAFT LAB pink.svg"
+            alt="Craft Lab"
+            className="max-h-full w-auto object-contain"
+          />
         </div>
         <p
           className="font-[Apercu] uppercase tracking-[0.25em] text-[11px] md:text-xs mt-4 text-[#b61667]"

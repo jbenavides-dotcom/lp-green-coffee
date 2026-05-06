@@ -27,7 +27,7 @@ export default function HeroYouInspire() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 pt-28 md:pt-40 pb-32 md:pb-40 min-h-[60vh] md:min-h-[70vh] justify-center">
         <img
-          src="/brand-vip/YOU INSPIRE US pink.svg"
+          src="/brand-vip/YOU INSPIRE US white.svg"
           alt={t.youInspire.title}
           className="w-full h-auto object-contain drop-shadow-lg"
           style={{
