@@ -91,11 +91,41 @@ select {
   box-shadow: 0 20px 40px rgba(44,45,46,0.12);
 }
 
-/* TopBar marquee for very small screens */
+/* TopBar scroll horizontal (legacy, ya no se usa con marquee) */
 .topbar-scroll::-webkit-scrollbar {
   display: none;
 }
 .topbar-scroll {
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+/* === TopBar marquee infinito === */
+@keyframes topbar-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.topbar-marquee {
+  width: max-content;
+  animation: topbar-marquee 30s linear infinite;
+}
+/* Pausa al hover para que el visitante pueda leer */
+.topbar-marquee-mask:hover .topbar-marquee {
+  animation-play-state: paused;
+}
+/* Accesibilidad: respetar prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .topbar-marquee { animation: none; }
+}
+/* Fade suave a la derecha — el texto se desvanece antes de chocar con el botón */
+.topbar-marquee-mask::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 70px;
+  background: linear-gradient(to right, transparent, var(--color-burdeos) 70%);
+  pointer-events: none;
+  z-index: 5;
 }
